@@ -1,0 +1,197 @@
+/* CSS Document */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image:url(images/body.jpg);
+	background-repeat:repeat;
+	background-color:#46381d;
+	color: #333000;
+	font-family: "lucida sans unicode", "lucida grande", verdana, arial, helvetica, sans-serif;
+}
+a:link {
+	color: #FAFAFA;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #DFDFDF;
+}
+a:hover {
+	text-decoration: underline;
+	color: #99CC00;
+}
+a:active {
+	text-decoration: none;
+	color: #99CC00;
+}
+#tekrar{
+background-image:url(images/container_bg.jpg);
+background-repeat:repeat-x;
+}
+#temel {
+background-image:url(images/container_bg.jpg);
+background-repeat:repeat-x;
+width:900px;
+}
+#cocuk {
+background-image:url(images/boy.jpg);
+background-position:left top;
+background-repeat:no-repeat;
+height:300px;
+}
+#logo {
+padding-top:20px;
+width:250px;
+margin-left:320px;
+/*background-image:url(images/banner.png);
+background-repeat:no-repeat;*/
+}
+/* menü */
+#menu {
+/*width:500px;*/
+height:57px;
+/*margin-top:108px;
+margin-bottom:0px;*/
+margin-left:0px;
+color:#FAFAFA;
+}
+#menu a:link {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#menu a:visited {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#menu a:active {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#menu a:hover {
+	text-decoration: none;
+	color:#0D0D0D;
+}
+/* baðlantýlar */
+#baglantilar {
+font-size:13px;
+}
+#baglantilar a:link {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#baglantilar a:visited {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#baglantilar a:active {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#baglantilar a:hover {
+	text-decoration: none;
+	color:#0D0D0D;
+}
+/* yorumlar */
+#yorumlar {
+font-size:12px;
+}
+#yorumlar a:link {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#yorumlar a:visited {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#yorumlar a:active {
+	color:#FAFAFA;
+	text-decoration: none;
+}
+#yorumlar a:hover {
+	text-decoration: none;
+	color:#0D0D0D;
+}
+/* metin */
+#metin_icerik{
+width:600px;
+margin-left:10px;
+}
+#metin_top{
+background-image:url(images/main_bg_top.png);
+background-repeat:no-repeat;
+width:627px;
+height:61px;
+margin-left:2px;
+text-align:left;
+padding-left:5px;
+}
+#metin_body {
+background-image:url(images/main_bg_alt.jpg);
+background-repeat:repeat-y;
+width:627px;
+color:#000000;
+margin-left:2px;
+}
+#metin_bottom{
+background-image:url(images/main_btm.png);
+background-repeat:no-repeat;
+width:631px;
+height:59px;
+text-align:right;
+padding-right:10px;
+}
+#metin {
+float:right;
+width:631px;
+margin-top:25px;
+}
+#kolon{
+margin-left:5px;
+}
+#kolon_bant{
+background-color:#444444;
+color:#99CC33;
+height:25px;
+}
+#copyright {
+color:#E0E0E0;
+font-size:12px;
+margin-right:3px;
+}
+#islem{
+background-color:#FFFFFF;
+color:#000000;
+width:400px;
+border-color:#FF6600;
+border:double;
+margin-left:50px;
+margin-right:50px;
+margin-top:30px;
+padding-bottom:10px;
+padding-top:10px;
+}
+.shf {
+color:#FF6600;
+}
+/* Ferman Ek */
+.gizle {
+visibility:hidden;
+}
+.darkgolden {
+color:#B8860B;
+}
+.maroon {
+color:#800000;
+}
+.soluk_siyah {
+color:#828282;
+}
+.siyah {
+color:#000000;
+}
+.red{
+color:#990000;
+}
+/* CSS Bitti*/

@@ -1,0 +1,78 @@
+/* Links */
+
+a:link { text-decoration: none; color: #CCCCCC; }
+
+a:visited { text-decoration: none; color: #CCCCCC; }
+
+a:hover, a:active { color: #95CDF2; }
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: 20px 0 10px; }
+
+h1 { font-size: 32px; margin-bottom: 0px; margin-top: 10px;}
+
+h2 { font-size: 28px; }
+
+h3 { font-size: 24px; }
+
+h4, h5, h6 { font-size: 20px; }
+
+
+
+body
+{
+	margin: 0;
+	padding: 0;
+	color: #CCCCCC;
+	background-color: #000000;
+	font: normal 76% "Trebuchet MS", "Lucida Grande", Verdana, Georgia, Sans-Serif;
+}
+
+.bg {
+background: url(resim/login/login-bg.png) no-repeat top left;
+}
+
+#input{
+       	width: 176px;
+        height: 35px;
+        overflow: hidden;
+		float:left;
+        background: url(resim/login/input-bg.png) no-repeat;
+    }
+
+input {
+       	width: 136px;
+        height: 35px;
+  		padding: 8px 0 0 5px;
+		margin-left:10px;
+        float: left;       
+        border: none;
+        background: transparent ;
+		color:#CCCCCC;
+        font: normal 13px Verdana;
+    }
+
+.button {
+        width: 55px;
+        height: 29px;
+        float: right;
+        border: none;
+		margin-left:20px;
+        background: url(resim/login/giris.png) no-repeat;
+        cursor: pointer
+    }
+#button_unuttum {
+        width: 100px;
+        height: 29px;
+        float: left;
+        border: none;
+		margin-left:0px;
+        background: url(resim/login/unuttum.png) no-repeat;
+        cursor: pointer
+    }
+.copyright {
+color:#FFF9FF;
+font-size:12px;
+font-weight:bold;
+}
