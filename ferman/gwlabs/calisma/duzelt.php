@@ -1,15 +1,15 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?
 require ("yonetim/db.php");
@@ -19,7 +19,7 @@ if ($id == $oku["calisma_id"]) {
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="center" valign="middle" class="text"><span class="darkgolden">Çalýþmalarým Güncelleme Bölümü</span></td>
+    <td align="center" valign="middle" class="text"><span class="darkgolden">Ã‡alÄ±ÅŸmalarÄ±m GÃ¼ncelleme BÃ¶lÃ¼mÃ¼</span></td>
   </tr>
   <tr>
     <td align="left" valign="top">
@@ -39,7 +39,7 @@ if ($id == $oku["calisma_id"]) {
         <td align="center" valign="top"><div>
             <table width="500" border="0" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="26%" align="left" valign="top"><span class="darkgolden">Konu Baþlýðý :</span></td>
+                <td width="26%" align="left" valign="top"><span class="darkgolden">Konu BaÅŸlÄ±ÄŸÄ± :</span></td>
                 <td width="74%" align="left" valign="top"><input name="konu" type="text"  class="kutu" id="konu" value="<?=$oku[calisma_baslik]?>" size="30"/></td>
               </tr>
               <tr>
@@ -90,12 +90,12 @@ if ($id == $oku["calisma_id"]) {
 <?
 }
 }
-//mysql baðlantýsýnýn kapatýlmasý
+//mysql baÄŸlantÄ±sÄ±nÄ±n kapatÄ±lmasÄ±
 mysql_close ($baglanti);
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

@@ -30,30 +30,30 @@ exit();
 }
 elseif (!preg_match("/[A-Za-z0-9_.-]+@([A-Za-z0-9_]+\.)+[A-Za-z]{2,4}/i", $mail))
 {
-print '<script>alert(" Mail Adresi Geçersiz ! ");history.back(-1);</script>';
+print '<script>alert(" Mail Adresi GeÃ§ersiz ! ");history.back(-1);</script>';
 }
 else
 {
-//konrol Bitiş
+//konrol BitiÅŸ
 
 @require ("yonetim/db.php");
 $SQL="insert into yorum (yorum_icerik,yorum_yazar,yazar_mail,yorum_tarih,yorum_saat,yorum_gun,bolum_id) values ('$data','$data2','$mail','$yorum_tarih','$yorum_saat','$yorum_gun','$blog_id')";
 $sorgu=@mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
-echo "sorgu yapılamadı";
+echo "sorgu yapÄ±lamadÄ±";
 exit();
 }
 mysql_close($baglanti);
 ?>
-Yorumunuz Eklenmiştir...<br />
-Onaylandıktan sonra yayınlanacaktır.<br />
+Yorumunuz EklenmiÅŸtir...<br />
+OnaylandÄ±ktan sonra yayÄ±nlanacaktÄ±r.<br />
 <br />
-Lütfen Bekleyiniz<br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
-Eğer hala yönlenmediyseniz <a href="?shf=blog&islem=oku_detay&blog_id=<?=$blog_id?>" class="style3"><span class="darkgolden">tıklayınız</span></a><br />
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=blog&islem=oku_detay&blog_id=<?=$blog_id?>" class="style3"><span class="darkgolden">tÄ±klayÄ±nÄ±z</span></a><br />
 
 <meta http-equiv="refresh" content="3;URL=?shf=blog&islem=oku_detay&blog_id=<?=$blog_id?>">
 <?

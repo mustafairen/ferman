@@ -52,15 +52,15 @@ function sayfalama($limit,$sayfano,$satir_sayisi=0,$sayfaadi='',$adresdeger='')
 }  
 ?>
 <?php
-//sql sorgu komutlarý
-//AÞAÐIDAKÝ AYARLARI KENDÝNÝZE GÖRE DEÐÝÞTÝRÝNÝZ  
-$limit = "7"; // Bir Sayfada Gösterilecek Kayýt Sayýsý  
+//sql sorgu komutlarÄ±
+//AÅžAÄžIDAKÄ° AYARLARI KENDÄ°NÄ°ZE GÃ–RE DEÄžÄ°ÅžTÄ°RÄ°NÄ°Z  
+$limit = "7"; // Bir Sayfada GÃ¶sterilecek KayÄ±t SayÄ±sÄ±  
 $kosul = "where bolum_id='$oku[blog_id]' AND yorum_onay='1' ORDER BY yorum_id ASC";  
 $tabloadi = "yorum";  
-//Toplam Kayýt Sayýsý Alýnýyor 
+//Toplam KayÄ±t SayÄ±sÄ± AlÄ±nÄ±yor 
 $sorgu = mysql_query("SELECT COUNT(*) FROM  $tabloadi $kosul");       
 $satir_sayisi = mysql_result($sorgu, 0);  
-//Alttaki Ayarlara Dokunmayýnýz...  
+//Alttaki Ayarlara DokunmayÄ±nÄ±z...  
 @ $sayfa = abs(intval($_GET['sayfa']));  
 if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))  
 {                  
@@ -69,7 +69,7 @@ if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))
 } else {                 
   $baslangic = ($sayfa - 1) * $limit;          
 }
-//Veriyi Aldýðýnýz Kodlar...  
+//Veriyi AldÄ±ÄŸÄ±nÄ±z Kodlar...  
 $y_sorgu = mysql_query("SELECT * FROM $tabloadi $kosul LIMIT $baslangic,$limit");       
 while($y_oku = mysql_fetch_array($y_sorgu))
 {
@@ -92,7 +92,7 @@ while($y_oku = mysql_fetch_array($y_sorgu))
   <tr>
     <td align="center" valign="middle">
 	<?
-    //SAYFA NUMARALARINI YAZDIRAN FONKSÝYONUMUZU ÇAÐIRIYORUZ
+    //SAYFA NUMARALARINI YAZDIRAN FONKSÄ°YONUMUZU Ã‡AÄžIRIYORUZ
 	echo sayfalama($limit,$sayfa,$satir_sayisi,'?shf=blog&islem=oku_detay&blog_id='.$_GET[blog_id].'');
 	?>
     </td>
@@ -112,7 +112,7 @@ while($y_oku = mysql_fetch_array($y_sorgu))
                    <br /></td>
              </tr>
              <tr>
-               <td width="23%" align="left"><span class="isim">Adýnýz Soyadýnýz</span></td>
+               <td width="23%" align="left"><span class="isim">AdÄ±nÄ±z SoyadÄ±nÄ±z</span></td>
                <td width="77%" align="left"><input name="yazar" type="text" id="yazar" size="15" /></td>
              </tr>
              <tr>
@@ -137,7 +137,7 @@ while($y_oku = mysql_fetch_array($y_sorgu))
                <td align="left">&nbsp;</td>
              </tr>
              <tr>
-               <td colspan="2" align="center"><input type="submit" name="button" id="button" value=" Gönder " /></td>
+               <td colspan="2" align="center"><input type="submit" name="button" id="button" value=" GÃ¶nder " /></td>
              </tr>
            </table>
       </form>

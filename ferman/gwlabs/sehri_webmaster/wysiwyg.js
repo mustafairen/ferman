@@ -139,7 +139,7 @@ var ToolbarList = {
 //Name              buttonID                 buttonTitle           buttonImage                            buttonImageRollover
   "bold":           ['Bold',                 'Bold',               imagesDir + 'bold.gif',               imagesDir + 'bold_on.gif'],
   //DT icon ekliyoz
-  "DT":         ['DT',               'Özet',             imagesDir + 'DT.gif',            imagesDir + 'DT2.gif'],
+  "DT":         ['DT',               'Ã–zet',             imagesDir + 'DT.gif',            imagesDir + 'DT2.gif'],
   //DT icon son
   "italic":         ['Italic',               'Italic',             imagesDir + 'italics.gif',            imagesDir + 'italics_on.gif'],
   

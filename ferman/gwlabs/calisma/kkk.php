@@ -1,26 +1,26 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?php
-//********** calisma sayfasý **********
+//********** calisma sayfasÄ± **********
 ////////////////////////////////////
 
-//kategoriye göre okuma iþlemi
+//kategoriye gÃ¶re okuma iÅŸlemi
 if ($shf == "work" && $islem == "oku")
 {
 include "gwlabs/calisma/oku.php";
 }
-//kategorideki veriye id'ye göre okuma
+//kategorideki veriye id'ye gÃ¶re okuma
 if ($shf == "work" && $islem == "oku_detay" && $id == $_GET["calisma_id"])
 {
 include "gwlabs/calisma/konuoku.php";
@@ -30,7 +30,7 @@ if ($shf == "work" && $islem == "ekle")
 {
 include "gwlabs/calisma/ekle.php";
 }
-// veri ekleme iþlemi
+// veri ekleme iÅŸlemi
 if ($shf == "work" && $islem == "ekleniyor")
 {
 include "gwlabs/calisma/islem_ekle.php";
@@ -40,28 +40,28 @@ if ($shf == "work" && $islem == "sil")
 {
 include "gwlabs/calisma/sil.php";
 }
-//veri silme iþlemi
+//veri silme iÅŸlemi
 if ($shf == "work" && $islem == "siliniyor")
 {
 include "gwlabs/calisma/islem_sil.php";
 }
-//veri düzeneleme
+//veri dÃ¼zeneleme
 if ($shf == "work" && $islem == "duzelt")
 {
 include "gwlabs/calisma/duzelt.php";
 }
-//veri düzenleme iþlemi
+//veri dÃ¼zenleme iÅŸlemi
 if ($shf == "work" && $islem == "duzeltiliyor")
 {
 include "gwlabs/calisma/islem_duzelt.php";
 }
 /*
-sayfa karar kontrol mekanizmasý sonu
+sayfa karar kontrol mekanizmasÄ± sonu
 */
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

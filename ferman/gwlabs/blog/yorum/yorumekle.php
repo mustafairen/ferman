@@ -1,15 +1,15 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <form id="form1" name="form1" method="post" action="?shf=yorum&islem=ekle">
   <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -20,7 +20,7 @@ if($giris){
               <br /></td>
         </tr>
         <tr>
-          <td align="left"><span class="isim">Adýnýz Soyadýnýz</span></td>
+          <td align="left"><span class="isim">AdÄ±nÄ±z SoyadÄ±nÄ±z</span></td>
           <td align="left"><input name="yazar" type="text" id="yazar" size="15" /></td>
         </tr>
         <tr>
@@ -52,7 +52,7 @@ if($giris){
           <td width="83%" align="left"><input name="postcode" type="password" id="postcode" size="10" /></td>
         </tr>
         <tr>
-          <td colspan="2" align="left"><input type="submit" name="button" id="button" value=" Gönder " /></td>
+          <td colspan="2" align="left"><input type="submit" name="button" id="button" value=" GÃ¶nder " /></td>
         </tr>
       </table></td>
     </tr>
@@ -60,7 +60,7 @@ if($giris){
 </form>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../../hata.php");
 }
 ?>

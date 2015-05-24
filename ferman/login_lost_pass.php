@@ -1,7 +1,7 @@
 <?
                                         ####################################
                                         # Ferman                           #
-                                        # Yönetim Sayfası                  #
+                                        # YÃ¶netim SayfasÄ±                  #
                                         # Web Master: m. iren | z. korucu  #
                                         ####################################
 @session_start();
@@ -24,33 +24,33 @@ $securitycode = $_POST["securitycode"];
 <center>
 <?
 if
-//boş mu ? dolu mu ?
+//boÅŸ mu ? dolu mu ?
 (
 empty($gecici) || empty($yeni) || empty($yeni2) || empty($securitycode)
 )
 {
 print '<script>alert(" Formu Eksik Doldurdunuz ! ");history.back(-1);</script>';
 }
-// şifreler uyuşuyor mu ?
+// ÅŸifreler uyuÅŸuyor mu ?
 elseif ( $yeni != $yeni2 )
 
-print '<script>alert(" Şifreler Uyuşmuyor ! ");history.back();</script>';
+print '<script>alert(" Åifreler UyuÅŸmuyor ! ");history.back();</script>';
 
 else
 {
-// geçici şifre doğru mu ?
+// geÃ§ici ÅŸifre doÄŸru mu ?
 $gecici_sifre = md5($_POST[gecici]);
 
 $gecici_sifre_sql =  @mysql_query("SELECT user_id FROM user WHERE user_lost_sifre = '".$gecici_sifre."'");
 if( mysql_num_rows($gecici_sifre_sql) != 1 )
 {
 
-    print '<script>alert("Geçici Şifrenizi Yanlış Girdiniz!");history.back();</script>';
+    print '<script>alert("GeÃ§ici Åifrenizi YanlÄ±ÅŸ Girdiniz!");history.back();</script>';
   
 }
 else
 {
-// yeni geçici şifre için Rastgele karakter üret
+// yeni geÃ§ici ÅŸifre iÃ§in Rastgele karakter Ã¼ret
  $karakter = 6;
  $baslangic = rand(1,24);
  $rastgelekod = md5(rand(0,500));
@@ -58,49 +58,49 @@ else
    
    
 $new_user_lost_sifre = $rastgele;
-//yeni şifreyi md5'le
+//yeni ÅŸifreyi md5'le
 $yeni_sifre = md5($_POST[yeni]);
-// Yeni şifreler için sorgu hazırla
+// Yeni ÅŸifreler iÃ§in sorgu hazÄ±rla
 $normal_sql = @mysql_query("SELECT * FROM `user` where user_lost_sifre = '$gecici_sifre' ORDER BY `user_id` DESC");
 while($oku = mysql_fetch_array($normal_sql))
 {
 $user_id_sql = $oku["user_id"];
 $SQL = "UPDATE user SET user_sifre ='$yeni_sifre', user_lost_sifre = '$new_user_lost_sifre' WHERE user_id = '$user_id_sql'";
-// şifreyi sorgula
+// ÅŸifreyi sorgula
 $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
 ?>
 <br /><br />
 <br />
-İsteğiniz Gerçekleştirilemedi...<br /><br />
-Lütfen Bekleyiniz<br />
+Ä°steÄŸiniz GerÃ§ekleÅŸtirilemedi...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms2.gif" width="24" height="24" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="3;URL=login.html">
 
-Eğer hala yönlenmediyseniz <a href="login.html" class="red">tıklayınız</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="login.html" class="red">tÄ±klayÄ±nÄ±z</a>
 <?
-// sorgu olmadı çık artık
+// sorgu olmadÄ± Ã§Ä±k artÄ±k
 exit();
 }
 ?>
 <br /><br />
 <br />
-kayıt veritabanından düzeltilmiştir...<br /><br />
-Lütfen Bekleyiniz<br />
+kayÄ±t veritabanÄ±ndan dÃ¼zeltilmiÅŸtir...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms2.gif" width="24" height="24" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="3;URL=login.php">
 
-Eğer hala yönlenmediyseniz <a href="login.php" class="red">tıklayınız</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="login.php" class="red">tÄ±klayÄ±nÄ±z</a>
 <?
 }
 }
 }
-//işimiz bitti MySQL'i kapatalım artık
+//iÅŸimiz bitti MySQL'i kapatalÄ±m artÄ±k
 @mysql_close($baglanti);
 //iyi yolculuklar...
 ?>

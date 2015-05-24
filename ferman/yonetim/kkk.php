@@ -1,38 +1,38 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?
-//Günlük Sayfasý
+//GÃ¼nlÃ¼k SayfasÄ±
 @include ("gwlabs/blog/kkk.php");
-//Hakkýmda Sayfasý
+//HakkÄ±mda SayfasÄ±
 @include ("gwlabs/hakkimda/kkk.php");
-//Makale-Döküman Sayfasý
+//Makale-DÃ¶kÃ¼man SayfasÄ±
 @include ("gwlabs/makale/kkk.php");
-//Network Sayfasý
+//Network SayfasÄ±
 @include ("gwlabs/network/kkk.php");
-//Çalýþmalarým Sayfasý
+//Ã‡alÄ±ÅŸmalarÄ±m SayfasÄ±
 @include ("gwlabs/calisma/kkk.php");
-//Ýletiþim Sayfasý
+//Ä°letiÅŸim SayfasÄ±
 @include ("gwlabs/iletisim/kkk.php");
-//Ayarlar sayfasý
-#Ayarlar ana menü
+//Ayarlar sayfasÄ±
+#Ayarlar ana menÃ¼
 @include ("gwlabs/ayarlar/kkk.php");
 #User
 @include ("yonetim/acrophobia/kkk.php");
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../hata.php");
 }
 ?>

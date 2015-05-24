@@ -1,19 +1,19 @@
 <?
-//********** portal sayfasý **********
+//********** portal sayfasÄ± **********
 ////////////////////////////////////
 
 //portal okuma
-//indexde blog çaðýr
+//indexde blog Ã§aÄŸÄ±r
 if ($shf == NULL)
 {
 @include "portal/blog_oku.php";
 }
-//Günlük okuma
+//GÃ¼nlÃ¼k okuma
 if ($shf == "blog" && $islem == "oku")
 {
 @include "portal/blog_oku.php";
 }
-//Günlük yorum okuma
+//GÃ¼nlÃ¼k yorum okuma
 if ($shf == "blog" && $islem == "oku_detay" && $blog_id == $_GET["blog_id"])
 {
 @include "portal/blog_detay.php";
@@ -23,32 +23,32 @@ if ($shf == "yorum" && $islem == "ekle")
 {
 @include "portal/yorum/yorumekleisle.php";
 }
-//çalýþmlarým okuma
+//Ã§alÄ±ÅŸmlarÄ±m okuma
 if ($shf == "work" && $islem == "oku")
 {
 @include "portal/calisma_oku.php";
 }
-//dökümanlar okuma    
+//dÃ¶kÃ¼manlar okuma    
 if ($shf == "doc" && $islem == "oku")
 {
 @include "portal/makale_oku.php";
 }
-//dökümanlar detay okuma
+//dÃ¶kÃ¼manlar detay okuma
 if ($shf == "doc" && $islem == "oku_detay" && $doc_id == $_GET["doc_id"])
 {
 @include "portal/makale_detay.php";
 }
-//hakkýmda okuma
+//hakkÄ±mda okuma
 if ($shf == "hakkimda" && $islem == "oku")
 {
 @include "portal/hakkimda_oku.php";
 }
-//iletiþim okuma
+//iletiÅŸim okuma
 if ($shf == "iletisim" && $islem == "oku")
 {
 @include "portal/iletisim_oku.php";
 }
-//Ferman hakkýnda
+//Ferman hakkÄ±nda
 if ($shf == "info" && $islem == "oku")
 {
 @include "gwlabs/ayarlar/info.html";

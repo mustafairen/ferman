@@ -1,13 +1,13 @@
 <?php
                                         ####################################
                                         # Ferman                           #
-                                        # Yönetim Sayfası                  #
+                                        # YÃ¶netim SayfasÄ±                  #
                                         # Web Master: mustafa iren         #
                                         ####################################
 
 
 include "yonetim/db.php";
-#                                      SİTE LOG START
+#                                      SÄ°TE LOG START
   @session_start ();
   @setlocale(LC_ALL, 'turkish');
   $saat = strftime("%H:%M:%S", time());
@@ -19,7 +19,7 @@ include "yonetim/db.php";
 //LOG
  $log_sql = @mysql_query("insert into log (log_id,log_tarih,log_saat,log_ip,log_sistem,log_referans,log_site_url) values ('','$tarih','$saat','$ip','$sistem','$referans','$site_url')");
   $log_sorgu= @mysql_query($log_sql,$baglanti);
-#                                      SİTE LOG FINISH
+#                                      SÄ°TE LOG FINISH
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -27,7 +27,7 @@ include "yonetim/db.php";
 <script src="http://<?=$site_adresi?>/Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
-<title>Vay Canına Açık Bulduk !</title>
+<title>Vay CanÄ±na AÃ§Ä±k Bulduk !</title>
 
 <style type="text/css">
 /* CSS Document */
@@ -110,10 +110,10 @@ a {
 <div id="acro"></div>
 <div id="mucit">
 <span class="yesil">
-    Tüm bilgileriniz sistem veritabanına kaydedilmiştir.<br />
-    Bilgilerinizin kullanımı tamamen Ferman yöneticisi insiyatifindedir.<br />
-    Lüzumu halinde gerekli kurum ve kuruluşlara bilgileriniz verilecektir.<br />
-    Size yeni bilişim yasasına göz atmanızı öneririz.<br />
+    TÃ¼m bilgileriniz sistem veritabanÄ±na kaydedilmiÅŸtir.<br />
+    Bilgilerinizin kullanÄ±mÄ± tamamen Ferman yÃ¶neticisi insiyatifindedir.<br />
+    LÃ¼zumu halinde gerekli kurum ve kuruluÅŸlara bilgileriniz verilecektir.<br />
+    Size yeni biliÅŸim yasasÄ±na gÃ¶z atmanÄ±zÄ± Ã¶neririz.<br />
     Design-Turk.Com
     </span>
 </div>
@@ -141,7 +141,7 @@ TypingText.runAll();
 <!-- 
                                         ####################################
                                         # Ferman                           #
-                                        # Hata Dosyası                     #
+                                        # Hata DosyasÄ±                     #
                                         # Web Master: mustafa iren         #
                                         ####################################
 -->

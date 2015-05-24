@@ -1,26 +1,26 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?php
-//********** Ýletiþim sayfasý **********
+//********** Ä°letiÅŸim sayfasÄ± **********
 ////////////////////////////////////
 
-//kategoriye göre okuma iþlemi
+//kategoriye gÃ¶re okuma iÅŸlemi
 if ($shf == "iletisim" && $islem == "oku")
 {
 include "gwlabs/iletisim/oku.php";
 }
-//kategorideki veriye id'ye göre okuma
+//kategorideki veriye id'ye gÃ¶re okuma
 if ($shf == "iletisim" && $islem == "oku_detay" && $id == $_GET["iletisim_id"])
 {
 include "gwlabs/iletisim/konuoku.php";
@@ -30,18 +30,18 @@ if ($shf == "iletisim" && $islem == "ekle")
 {
 include "gwlabs/iletisim/ekle.php";
 }
-// veri ekleme iþlemi
+// veri ekleme iÅŸlemi
 if ($shf == "iletisim" && $islem == "ekleniyor")
 {
 include "gwlabs/iletisim/islem_ekle.php";
 }
 
-//veri düzeneleme
+//veri dÃ¼zeneleme
 if ($shf == "iletisim" && $islem == "duzelt")
 {
 include "gwlabs/iletisim/duzelt.php";
 }
-//veri düzenleme iþlemi
+//veri dÃ¼zenleme iÅŸlemi
 if ($shf == "iletisim" && $islem == "duzeltiliyor")
 {
 include "gwlabs/iletisim/islem_duzelt.php";
@@ -49,7 +49,7 @@ include "gwlabs/iletisim/islem_duzelt.php";
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

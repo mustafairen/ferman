@@ -1,15 +1,15 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <form name="form1" method="post" action="?shf=user&islem=ekleniyor">
   <table width="350" border="0" cellspacing="0" cellpadding="0">
@@ -24,7 +24,7 @@ if($giris){
       <td align="left" valign="top">&nbsp;</td>
     </tr>
     <tr>
-      <td align="left" valign="top">Þifre</td>
+      <td align="left" valign="top">Åžifre</td>
       <td align="left" valign="top"><label>
         <input name="sifre" type="password" id="sifre" size="20">
       </label></td>
@@ -34,7 +34,7 @@ if($giris){
       <td align="left" valign="top">&nbsp;</td>
     </tr>
     <tr>
-      <td align="left" valign="top">Þifre Doðrula</td>
+      <td align="left" valign="top">Åžifre DoÄŸrula</td>
       <td align="left" valign="top"><input name="sifre2" type="password" id="sifre2" size="20" /></td>
     </tr>
     <tr>
@@ -52,7 +52,7 @@ if($giris){
       <td align="left" valign="top">&nbsp;</td>
     </tr>
     <tr>
-      <td align="left" valign="top">Güvenlik Kodu</td>
+      <td align="left" valign="top">GÃ¼venlik Kodu</td>
       <td align="left" valign="top"><label>
         <input name="securitycode" type="password" id="securitycode" size="20">
       </label></td>
@@ -63,13 +63,13 @@ if($giris){
     </tr>
     <tr>
       <td align="left" valign="top">&nbsp;</td>
-      <td align="right" valign="top"><input type="submit" name="button" id="button" value="Yönetici Ekle"></td>
+      <td align="right" valign="top"><input type="submit" name="button" id="button" value="YÃ¶netici Ekle"></td>
     </tr>
   </table>
 </form>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

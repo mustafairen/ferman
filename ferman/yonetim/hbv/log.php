@@ -43,7 +43,7 @@ counter=setTimeout("countDown()", 1000);
 }
 function startit(){
 if (document.all||document.getElementById) //CHANGE TEXT BELOW TO YOUR OWN
-document.write('<b id="countDownText">'+countDownTime+' </b> saniye sonra veriler <a href="javascript:window.location.reload()">güncelle</a>necektir. ')
+document.write('<b id="countDownText">'+countDownTime+' </b> saniye sonra veriler <a href="javascript:window.location.reload()">gÃ¼ncelle</a>necektir. ')
 countDown()
 }
 if (document.all||document.getElementById)
@@ -109,18 +109,18 @@ function sayfalama($limit,$sayfano,$satir_sayisi=0,$sayfaadi='',$adresdeger='')
 }  
 ?>
 <?php
-//sql sorgu komutlarý
+//sql sorgu komutlarÄ±
 
-//AÞAÐIDAKÝ AYARLARI KENDÝNÝZE GÖRE DEÐÝÞTÝRÝNÝZ  
-$limit = "20"; // Bir Sayfada Gösterilecek Kayýt Sayýsý  
-$kosul = "ORDER BY `log_id` DESC"; //Kayýtlarý Alma Koþulunuz.. Koþul Yoksa Boþ Býrakýnýz...  
+//AÅžAÄžIDAKÄ° AYARLARI KENDÄ°NÄ°ZE GÃ–RE DEÄžÄ°ÅžTÄ°RÄ°NÄ°Z  
+$limit = "20"; // Bir Sayfada GÃ¶sterilecek KayÄ±t SayÄ±sÄ±  
+$kosul = "ORDER BY `log_id` DESC"; //KayÄ±tlarÄ± Alma KoÅŸulunuz.. KoÅŸul Yoksa BoÅŸ BÄ±rakÄ±nÄ±z...  
 $tabloadi = "log";  
 
-//Toplam Kayýt Sayýsý Alýnýyor 
+//Toplam KayÄ±t SayÄ±sÄ± AlÄ±nÄ±yor 
 $sorgu = mysql_query("SELECT COUNT(*) FROM  $tabloadi $kosul");       
 $satir_sayisi = mysql_result($sorgu, 0);  
 
-//Alttaki Ayarlara Dokunmayýnýz...  
+//Alttaki Ayarlara DokunmayÄ±nÄ±z...  
 @ $sayfa = abs(intval($_GET['sayfa']));  
 if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))  
 {                  
@@ -130,7 +130,7 @@ if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))
   $baslangic = ($sayfa - 1) * $limit;          
 }
 
-//Veriyi Aldýðýnýz Kodlar.. Kendinize Göre Düzenleyiniz...  
+//Veriyi AldÄ±ÄŸÄ±nÄ±z Kodlar.. Kendinize GÃ¶re DÃ¼zenleyiniz...  
 $log_oku_sorgu = mysql_query("SELECT * FROM $tabloadi $kosul LIMIT $baslangic,$limit");       
 while($x_oku = mysql_fetch_array($log_oku_sorgu))
 {
@@ -145,7 +145,7 @@ while($x_oku = mysql_fetch_array($log_oku_sorgu))
 <tr>
     <td height="25" colspan="3" align="left" valign="middle">&nbsp;
       <a href="<?=$x_oku[log_referans]?>" target="_blank" title="<?=$x_oku[log_referans]?>"><span class="log_renk">Nereden Geldi ?</span></a>&nbsp;</td>
-    <td align="center" valign="middle"><a href="#" target="_blank" title="<?=$x_oku[log_sistem]?>"><span class="log_renk">Ýþletim sistemi</span></a>&nbsp;</td>
+    <td align="center" valign="middle"><a href="#" target="_blank" title="<?=$x_oku[log_sistem]?>"><span class="log_renk">Ä°ÅŸletim sistemi</span></a>&nbsp;</td>
     <td align="right" valign="middle">
     <a href="?shf=ayarlar&amp;islem=log_sil&amp;id=<?=$x_oku[log_id]?>" class="red">Log Sil</a>
     &nbsp;</td>
@@ -162,12 +162,12 @@ while($x_oku = mysql_fetch_array($log_oku_sorgu))
   <tr>
     <td align="center" valign="middle">
 	<?
-    //SAYFA NUMARALARINI YAZDIRAN FONKSÝYONUMUZU ÇAÐIRIYORUZ
+    //SAYFA NUMARALARINI YAZDIRAN FONKSÄ°YONUMUZU Ã‡AÄžIRIYORUZ
 	echo sayfalama($limit,$sayfa,$satir_sayisi,'?shf=ayarlar&amp;islem=log_oku');
 	?>
     </td>
   </tr>
 </table>
 </div>
-<!-- Tasarým Doðmamýþ Bebeðe Don Biçmektir. -->
+<!-- TasarÄ±m DoÄŸmamÄ±ÅŸ BebeÄŸe Don BiÃ§mektir. -->
 <!-- Cyber Life AREA (c) 2004-2007 -->

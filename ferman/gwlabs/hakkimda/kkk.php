@@ -1,26 +1,26 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?php
-//********** Hakkýmda sayfasý **********
+//********** HakkÄ±mda sayfasÄ± **********
 ////////////////////////////////////
 
-//kategoriye göre okuma iþlemi
+//kategoriye gÃ¶re okuma iÅŸlemi
 if ($shf == "hakkimda" && $islem == "oku")
 {
 include "gwlabs/hakkimda/oku.php";
 }
-//kategorideki veriye id'ye göre okuma
+//kategorideki veriye id'ye gÃ¶re okuma
 if ($shf == "hakkimda" && $islem == "oku_detay" && $id == $_GET["hakkimda_id"])
 {
 include "gwlabs/hakkimda/konuoku.php";
@@ -30,7 +30,7 @@ if ($shf == "hakkimda" && $islem == "ekle")
 {
 include "gwlabs/hakkimda/ekle.php";
 }
-// veri ekleme iþlemi
+// veri ekleme iÅŸlemi
 if ($shf == "hakkimda" && $islem == "ekleniyor")
 {
 include "gwlabs/hakkimda/islem_ekle.php";
@@ -40,28 +40,28 @@ if ($shf == "hakkimda" && $islem == "sil")
 {
 include "gwlabs/hakkimda/sil.php";
 }
-//veri silme iþlemi
+//veri silme iÅŸlemi
 if ($shf == "hakkimda" && $islem == "siliniyor")
 {
 include "gwlabs/hakkimda/islem_sil.php";
 }
-//veri düzeneleme
+//veri dÃ¼zeneleme
 if ($shf == "hakkimda" && $islem == "duzelt")
 {
 include "gwlabs/hakkimda/duzelt.php";
 }
-//veri düzenleme iþlemi
+//veri dÃ¼zenleme iÅŸlemi
 if ($shf == "hakkimda" && $islem == "duzeltiliyor")
 {
 include "gwlabs/hakkimda/islem_duzelt.php";
 }
 /*
-sayfa karar kontrol mekanizmasý sonu
+sayfa karar kontrol mekanizmasÄ± sonu
 */
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

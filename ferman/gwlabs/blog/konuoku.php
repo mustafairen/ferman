@@ -1,32 +1,32 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <div align="center">
-<a href="?shf=yorum&islem=oku_tum" target="_self" class="darkgolden"><span class="darkgolden">Onaysýz Yorumlar</span></a>&nbsp;|&nbsp;
-<a href="?shf=yorum&islem=oku_onay" target="_self" class="darkgolden"><span class="darkgolden">Onaylý Yorumlar</span></a>
+<a href="?shf=yorum&islem=oku_tum" target="_self" class="darkgolden"><span class="darkgolden">OnaysÄ±z Yorumlar</span></a>&nbsp;|&nbsp;
+<a href="?shf=yorum&islem=oku_onay" target="_self" class="darkgolden"><span class="darkgolden">OnaylÄ± Yorumlar</span></a>
 <br />
 </div>
 <div align="center">
 <table width="200" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td>Günlük Okuma Bölümü </td>
+    <td>GÃ¼nlÃ¼k Okuma BÃ¶lÃ¼mÃ¼ </td>
     <td>&nbsp;</td>
   </tr>
 </table>
 
 </div>
 <?php
-//mysql baðlantýsý
+//mysql baÄŸlantÄ±sÄ±
 include("yonetim/db.php");
 ?>
 <?php
@@ -82,18 +82,18 @@ function sayfalama($limit,$sayfano,$satir_sayisi=0,$sayfaadi='',$adresdeger='')
 }  
 ?>
 <?php
-//sql sorgu komutlarý
+//sql sorgu komutlarÄ±
 
-//AÞAÐIDAKÝ AYARLARI KENDÝNÝZE GÖRE DEÐÝÞTÝRÝNÝZ  
-$limit = "5"; // Bir Sayfada Gösterilecek Kayýt Sayýsý  
-$kosul = "where blog_id='$blog_id' ORDER BY `blog_id` DESC"; //Kayýtlarý Alma Koþulunuz.. Koþul Yoksa Boþ Býrakýnýz...  
+//AÅžAÄžIDAKÄ° AYARLARI KENDÄ°NÄ°ZE GÃ–RE DEÄžÄ°ÅžTÄ°RÄ°NÄ°Z  
+$limit = "5"; // Bir Sayfada GÃ¶sterilecek KayÄ±t SayÄ±sÄ±  
+$kosul = "where blog_id='$blog_id' ORDER BY `blog_id` DESC"; //KayÄ±tlarÄ± Alma KoÅŸulunuz.. KoÅŸul Yoksa BoÅŸ BÄ±rakÄ±nÄ±z...  
 $tabloadi = "blog";  
 
-//Toplam Kayýt Sayýsý Alýnýyor 
+//Toplam KayÄ±t SayÄ±sÄ± AlÄ±nÄ±yor 
 $sorgu = mysql_query("SELECT COUNT(*) FROM  $tabloadi $kosul");       
 $satir_sayisi = mysql_result($sorgu, 0);  
 
-//Alttaki Ayarlara Dokunmayýnýz...  
+//Alttaki Ayarlara DokunmayÄ±nÄ±z...  
 @ $sayfa = abs(intval($_GET['sayfa']));  
 if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))  
 {                  
@@ -103,7 +103,7 @@ if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))
   $baslangic = ($sayfa - 1) * $limit;          
 }
 
-//Veriyi Aldýðýnýz Kodlar.. Kendinize Göre Düzenleyiniz...  
+//Veriyi AldÄ±ÄŸÄ±nÄ±z Kodlar.. Kendinize GÃ¶re DÃ¼zenleyiniz...  
 $sorgu = mysql_query("SELECT * FROM $tabloadi $kosul LIMIT $baslangic,$limit");       
 while($oku = mysql_fetch_array($sorgu))
 {
@@ -123,9 +123,9 @@ while($oku = mysql_fetch_array($sorgu))
         <?=$oku[blog_tarih]?>
         &nbsp;
         <?=$oku[blog_gun]?>
-        &nbsp;günü yazýlmýþtýr. @
+        &nbsp;gÃ¼nÃ¼ yazÄ±lmÄ±ÅŸtÄ±r. @
         <?=$oku[blog_saat]?>
-        &nbsp;<a href="?shf=blog&amp;islem=duzelt&amp;id=<?=$oku[blog_id]?>" class="text">Düzenle</a>&nbsp;-&nbsp;<a href="?shf=blog&amp;islem=sil&amp;id=<?=$oku[blog_id]?>" class="red">Sil</a></p>
+        &nbsp;<a href="?shf=blog&amp;islem=duzelt&amp;id=<?=$oku[blog_id]?>" class="text">DÃ¼zenle</a>&nbsp;-&nbsp;<a href="?shf=blog&amp;islem=sil&amp;id=<?=$oku[blog_id]?>" class="red">Sil</a></p>
     </div>
 </div>
 <div>
@@ -135,17 +135,17 @@ while($oku = mysql_fetch_array($sorgu))
 <?php         
 }           
 
-//SAYFA NUMARALARINI YAZDIRAN FONKSÝYONUMUZU ÇAÐIRIYORUZ  
+//SAYFA NUMARALARINI YAZDIRAN FONKSÄ°YONUMUZU Ã‡AÄžIRIYORUZ  
 echo sayfalama($limit,$sayfa,$satir_sayisi,'?shf=blog&amp;islem=oku');
 ?>
 </div>
 <?php
-//baðlantýnýn kapatýlmasý
+//baÄŸlantÄ±nÄ±n kapatÄ±lmasÄ±
 mysql_close ($baglanti);
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

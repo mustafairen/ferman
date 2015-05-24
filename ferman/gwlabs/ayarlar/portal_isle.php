@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["cwuser_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?
 $portal_avatar=trim($_POST[portal_avatar]);
@@ -33,7 +33,7 @@ $SQL = "UPDATE portal SET portal_avatar = '$portal_avatar' , portal_nick='$porta
   $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
-echo "sorgu yapılamadı";
+echo "sorgu yapÄ±lamadÄ±";
 exit();
 }
 }else{
@@ -42,7 +42,7 @@ $sqlekle = "insert into portal (portal_avatar,portal_nick) values('$portal_avata
   $sorgu_ekle= @mysql_query($sqlekle,$baglanti);
 if (!$sorgu_ekle)
 {
-echo "sorgu yapılamadı";
+echo "sorgu yapÄ±lamadÄ±";
 exit();
 }
 
@@ -51,18 +51,18 @@ mysql_close($baglanti);
 //sorgu bitti
 ?>
 <img src="resim/lodos/tamam.jpg" width="25" height="25" border="0" /><br />
-kayıt veritabanından düzeltilmiştir...<br /><br />
-Lütfen Bekleyiniz<br />
+kayÄ±t veritabanÄ±ndan dÃ¼zeltilmiÅŸtir...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="2;URL=?shf=ayarlar&amp;islem=oku">
 
-Eğer hala yönlenmediyseniz <a href="?shf=ayarlar&amp;islem=oku" class="red">tıklayınız</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=ayarlar&amp;islem=oku" class="red">tÄ±klayÄ±nÄ±z</a>
 
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

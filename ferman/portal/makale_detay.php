@@ -1,16 +1,16 @@
 <?php
-//mysql baðlantýsý
+//mysql baÄŸlantÄ±sÄ±
 @include("yonetim/db.php");
 ?>
 <?php
-//sql sorgu komutlarý
-//AÞAÐIDAKÝ AYARLARI KENDÝNÝZE GÖRE DEÐÝÞTÝRÝNÝZ  
-$limit = "5"; // Bir Sayfada Gösterilecek Kayýt Sayýsý  
+//sql sorgu komutlarÄ±
+//AÅžAÄžIDAKÄ° AYARLARI KENDÄ°NÄ°ZE GÃ–RE DEÄžÄ°ÅžTÄ°RÄ°NÄ°Z  
+$limit = "5"; // Bir Sayfada GÃ¶sterilecek KayÄ±t SayÄ±sÄ±  
 $kosul = "where makale_id='$doc_id' ORDER BY `makale_id` DESC";  
 $tabloadi = "makale";  
-//Toplam Kayýt Sayýsý Alýnýyor 
+//Toplam KayÄ±t SayÄ±sÄ± AlÄ±nÄ±yor 
 $sorgu = mysql_query("SELECT COUNT(*) FROM  $tabloadi $kosul");       
-//Veriyi Aldýðýnýz Kodlar...
+//Veriyi AldÄ±ÄŸÄ±nÄ±z Kodlar...
 $sorgu = mysql_query("SELECT * FROM $tabloadi $kosul ");       
 while($oku = mysql_fetch_array($sorgu))
 {

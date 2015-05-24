@@ -8,7 +8,7 @@ while($y_oku = mysql_fetch_array($y_sorgu))
 ?>
 <tr><td>
 &nbsp;&Xi;&nbsp;<a href="?shf=blog&amp;islem=oku_detay&amp;blog_id=<?=$y_oku[bolum_id]?>" class="style3">
-<? print substr($y_oku[yorum_icerik],0,50) ?>...</a><br /><div align="right"><?=$y_oku[yorum_yazar]?> yorumladý...</div><br />
+<? print substr($y_oku[yorum_icerik],0,50) ?>...</a><br /><div align="right"><?=$y_oku[yorum_yazar]?> yorumladÄ±...</div><br />
 </td></tr>
 <? }?>
 </table>

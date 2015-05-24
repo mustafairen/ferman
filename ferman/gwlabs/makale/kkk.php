@@ -1,26 +1,26 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["cwuser_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?php
-//********** Döküman-Makale sayfasý **********
+//********** DÃ¶kÃ¼man-Makale sayfasÄ± **********
 ////////////////////////////////////
 
-//kategoriye göre okuma iþlemi
+//kategoriye gÃ¶re okuma iÅŸlemi
 if ($shf == "doc" && $islem == "oku")
 {
 include "gwlabs/makale/oku.php";
 }
-//kategorideki veriye id'ye göre okuma
+//kategorideki veriye id'ye gÃ¶re okuma
 if ($shf == "doc" && $islem == "oku_detay" && $id == $_GET["makale_id"])
 {
 include "gwlabs/makale/konuoku.php";
@@ -30,7 +30,7 @@ if ($shf == "doc" && $islem == "ekle")
 {
 include "gwlabs/makale/ekle.php";
 }
-// veri ekleme iþlemi
+// veri ekleme iÅŸlemi
 if ($shf == "doc" && $islem == "ekleniyor")
 {
 include "gwlabs/makale/islem_ekle.php";
@@ -40,28 +40,28 @@ if ($shf == "doc" && $islem == "sil")
 {
 include "gwlabs/makale/sil.php";
 }
-//veri silme iþlemi
+//veri silme iÅŸlemi
 if ($shf == "doc" && $islem == "siliniyor")
 {
 include "gwlabs/makale/islem_sil.php";
 }
-//veri düzeneleme
+//veri dÃ¼zeneleme
 if ($shf == "doc" && $islem == "duzelt")
 {
 include "gwlabs/makale/duzelt.php";
 }
-//veri düzenleme iþlemi
+//veri dÃ¼zenleme iÅŸlemi
 if ($shf == "doc" && $islem == "duzeltiliyor")
 {
 include "gwlabs/makale/islem_duzelt.php";
 }
 /*
-sayfa karar kontrol mekanizmasý sonu
+sayfa karar kontrol mekanizmasÄ± sonu
 */
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

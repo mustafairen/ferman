@@ -1,24 +1,24 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?
 // Ayarlar Karar Komuta Kontrol
-//üyelere bak
+//Ã¼yelere bak
 if ($shf == "user" && $islem == "oku")
 {
 include "yonetim/acrophobia/oku.php";
 }
-//üye ekle
+//Ã¼ye ekle
 if ($shf == "user" && $islem == "ekle")
 {
 include "yonetim/acrophobia/ekle.php";
@@ -27,7 +27,7 @@ if ($shf == "user" && $islem == "ekleniyor")
 {
 include "yonetim/acrophobia/islem_ekle.php";
 }
-//üye bilgi güncelle
+//Ã¼ye bilgi gÃ¼ncelle
 if ($shf == "user" && $islem == "duzelt")
 {
 include "yonetim/acrophobia/duzelt.php";
@@ -36,7 +36,7 @@ if ($shf == "user" && $islem == "duzeltiliyor")
 {
 include "yonetim/acrophobia/islem_duzelt.php";
 }
-//üye sil
+//Ã¼ye sil
 if ($shf == "user" && $islem == "sil")
 {
 include "yonetim/acrophobia/sil.php";
@@ -61,7 +61,7 @@ include "yonetim/hbv/log_siliniyor.php";
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

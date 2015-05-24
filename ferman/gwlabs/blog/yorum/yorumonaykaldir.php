@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <? 
 require ("yonetim/db.php");
@@ -18,25 +18,25 @@ $sonuc=mysql_query($sql);
   
 if (!$sonuc)
 {
-echo "sorgu yapılamadı";
+echo "sorgu yapÄ±lamadÄ±";
 exit();
 }
 mysql_close($baglanti);
 ?>
 <center>
 <br />
-yorum onayı kaldırıldı...<br /><br />
-Lütfen Bekleyiniz<br />
+yorum onayÄ± kaldÄ±rÄ±ldÄ±...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="3; URL=?shf=blog&amp;islem=oku_detay&blog_id=<?=$blog_id?>">
 
-Eğer hala yönlenmediyseniz <a href="?shf=blog&amp;islem=oku_detay&blog_id=<?=$blog_id?>" class="red">tıklayınız</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=blog&amp;islem=oku_detay&blog_id=<?=$blog_id?>" class="red">tÄ±klayÄ±nÄ±z</a>
 </center>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../../hata.php");
 }
 ?>

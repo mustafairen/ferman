@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?><center>
 <?php
 $user_nick = trim($_POST['nick']);
@@ -27,10 +27,10 @@ print '<script>alert(" Formu Eksik Doldurdunuz ! ");history.back(-1);</script>';
 }
 elseif (!preg_match("/[A-Za-z0-9_.-]+@([A-Za-z0-9_]+\.)+[A-Za-z]{2,4}/i", $user_mail))
 {
-print '<script>alert(" Mail Adresi Geçersiz ! ");history.back(-1);</script>';
+print '<script>alert(" Mail Adresi GeÃ§ersiz ! ");history.back(-1);</script>';
 }
 elseif ( $user_sifre != $user_sifre_t ) {
-print '<script>alert(" Şifreler Uyuşmuyor ! ");history.back(-1);</script>';
+print '<script>alert(" Åifreler UyuÅŸmuyor ! ");history.back(-1);</script>';
 }
 else
 {
@@ -39,16 +39,16 @@ $user_sifre_kont = md5($user_sifre_e);
 $sifre_kontrol = mysql_query("select user_nick from user where user_sifre = '".$user_sifre_kont."'");
 if( mysql_num_rows($sifre_kontrol) == 0 )
 {
-print '<script>alert("Yanlış şifre girdiniz!");history.back(-1);</script>';
+print '<script>alert("YanlÄ±ÅŸ ÅŸifre girdiniz!");history.back(-1);</script>';
 exit;
 }
 if($user_nick!=$_POST[nick_e]) { 
-//Kullanıcı Adı Kontrol  
+//KullanÄ±cÄ± AdÄ± Kontrol  
 $s = @mysql_query("SELECT user_id FROM user WHERE user_nick='$user_nick'");
 if ( @mysql_num_rows($s) >= 1) 
 {
 ?>
-<script>alert(" <?=$user_nick?> Kullanıcı adı kayıtlı ! ");history.back(-1);</script>
+<script>alert(" <?=$user_nick?> KullanÄ±cÄ± adÄ± kayÄ±tlÄ± ! ");history.back(-1);</script>
 <?
 exit();
 }
@@ -59,7 +59,7 @@ $sorgu_mail = @mysql_query("SELECT user_mail FROM user WHERE user_mail='$user_ma
 if ( @mysql_num_rows($sorgu_mail) >= 1) 
 {
 ?>
-<script>alert(" <?=$user_mail?> Mail Adresi kayıtlı ! ");history.back();</script>
+<script>alert(" <?=$user_mail?> Mail Adresi kayÄ±tlÄ± ! ");history.back();</script>
 <?
 exit();
 } 
@@ -79,13 +79,13 @@ $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
 ?><br />
-İsteğiniz Gerçekleştirilemedi...<br /><br />
-Lütfen Bekleyiniz<br />
+Ä°steÄŸiniz GerÃ§ekleÅŸtirilemedi...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="2;URL=?shf=user&amp;islem=oku">
-Eğer hala yönlenmediyseniz <a href="?shf=user&amp;islem=oku" class="red">tıklayınız</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=user&amp;islem=oku" class="red">tÄ±klayÄ±nÄ±z</a>
 <?
 exit();
 }
@@ -93,16 +93,16 @@ exit();
 mysql_close($baglanti);
 //sorgu bitti
 ?><br />
-kayıt veritabanından düzeltilmiştir...<br /><br />
-Lütfen Bekleyiniz<br />
+kayÄ±t veritabanÄ±ndan dÃ¼zeltilmiÅŸtir...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="2;URL=?shf=user&amp;islem=oku">
-Eğer hala yönlenmediyseniz <a href="?shf=user&amp;islem=oku" class="red">tıklayınız</a></center>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=user&amp;islem=oku" class="red">tÄ±klayÄ±nÄ±z</a></center>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

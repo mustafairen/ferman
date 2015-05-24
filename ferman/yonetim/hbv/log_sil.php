@@ -1,20 +1,20 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <form name="form1" method="post" action="?shf=ayarlar&islem=log_siliniyor&id=<?=$id?>">
 <table border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td>Tutulan LOG'u Silmek Ýçin Güvenlik Kodu Girmelisiniz !</td>
+    <td>Tutulan LOG'u Silmek Ä°Ã§in GÃ¼venlik Kodu Girmelisiniz !</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -22,7 +22,7 @@ if($giris){
   <tr>
     <td><table border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <td>Güvenlik Kodu</td>
+        <td>GÃ¼venlik Kodu</td>
         <td>
           &nbsp;&nbsp;<input name="securitycode" type="password" id="securitycode" size="10"></td>
       </tr>
@@ -35,7 +35,7 @@ if($giris){
 </form>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

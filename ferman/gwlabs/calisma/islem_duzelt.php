@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <span class="hidden">
 <?php
@@ -24,44 +24,44 @@ $calisma_id = $_POST["metin"];
 <?
 @include"yonetim/hbv/postcode_kontrol.php";
 if ($calisma_baslik == "")
-echo "<br><center><b>Konu Başlığı'nı yazmadığınızı algıladı !! 
-<br>Yoksa algı yapılarımız mı farklı ?</b></center>";
+echo "<br><center><b>Konu BaÅŸlÄ±ÄŸÄ±'nÄ± yazmadÄ±ÄŸÄ±nÄ±zÄ± algÄ±ladÄ± !! 
+<br>Yoksa algÄ± yapÄ±larÄ±mÄ±z mÄ± farklÄ± ?</b></center>";
 elseif ($calisma_icerik == "")
-echo "<br><center><b>Konu İçeriği'ni yazmadığınızı algıladı !! 
-<br>Yoksa algı yapılarımız mı farklı ?</b></center>";
+echo "<br><center><b>Konu Ä°Ã§eriÄŸi'ni yazmadÄ±ÄŸÄ±nÄ±zÄ± algÄ±ladÄ± !! 
+<br>Yoksa algÄ± yapÄ±larÄ±mÄ±z mÄ± farklÄ± ?</b></center>";
 else
 $SQL = "UPDATE calisma SET calisma_baslik = '$calisma_baslik', calisma_icerik = '$calisma_icerik' WHERE calisma_id = '{$_POST[id]}'";
 /*
-* sorgu cümlemiz hazır. artık mysql ile bağlantı kuralım
+* sorgu cÃ¼mlemiz hazÄ±r. artÄ±k mysql ile baÄŸlantÄ± kuralÄ±m
 */
 {
 include ("yonetim/db.php");
 }
 /*
-* sql cümlesini mysql e iletiyoruz ve cvp istiyoruz
+* sql cÃ¼mlesini mysql e iletiyoruz ve cvp istiyoruz
 */
 $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
-echo "sorgu yapılamadı";
+echo "sorgu yapÄ±lamadÄ±";
 exit();
 }
 mysql_close($baglanti);
 //sorgu bitti
 ?><br />
 <center>
-kayıt veritabanından düzeltilmiştir...<br /><br />
-Lütfen Bekleyiniz<br />
+kayÄ±t veritabanÄ±ndan dÃ¼zeltilmiÅŸtir...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="3;URL=?shf=work&amp;islem=oku">
 
-Eğer hala yönlenmediyseniz <a href="?shf=work&amp;islem=oku" class="red">tıklayınız</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=work&amp;islem=oku" class="red">tÄ±klayÄ±nÄ±z</a>
 </center>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

@@ -1,15 +1,15 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?Php
 if (
@@ -20,10 +20,10 @@ print "Formu eksik doldurdunuz";
 }
 elseif (!(eregi("^[_a-z0-9-]+(\.[a-z0-9-]+)*@([0-9a-z][0-9a-z-]*[0-9a-z]\.)+[a-z]{4}[mtgvu]?$", $mail)))
 {
-print "mail adresi yanlýþ yazýldý.";
+print "mail adresi yanlÄ±ÅŸ yazÄ±ldÄ±.";
 }
 elseif ( $sifre != $sifre2 ) {
-print "þifreler uyuþmuyor";
+print "ÅŸifreler uyuÅŸmuyor";
 }
 else
 {
@@ -32,21 +32,21 @@ $veriler[2] = trim($sifre);
 $veriler[3] = trim($mail);
 $s = mysql_query("SELECT * FROM user WHERE nick='$user_nick'");
 if ( mysql_num_rows($s) >= 1) {
-print "$user_nick kullanýcý adý veritabanýnda kayýtlý.";
+print "$user_nick kullanÄ±cÄ± adÄ± veritabanÄ±nda kayÄ±tlÄ±.";
 exit();
 }
 $yeni_sifre = md5($veriler[2]);
 $tablo = "INSERT INTO user VALUES ('','$veriler[1]','$yeni_sifre','$veriler[3]'";
 if ( mysql_query($tablo) ) {
-print "kayýt iþlemi tamam";
+print "kayÄ±t iÅŸlemi tamam";
 } else {
-print "kayýt baþarýsýz";
+print "kayÄ±t baÅŸarÄ±sÄ±z";
 }
 }
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

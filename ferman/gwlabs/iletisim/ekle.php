@@ -1,19 +1,19 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="center" valign="middle" class="text"><span class="darkgolden">Ýletiþim Ekleme Bölümü</span></td>
+    <td align="center" valign="middle" class="text"><span class="darkgolden">Ä°letiÅŸim Ekleme BÃ¶lÃ¼mÃ¼</span></td>
   </tr>
   <tr>
     <td align="left" valign="top">
@@ -46,7 +46,7 @@ if($giris){
                 <td colspan="2" align="left" valign="top">&nbsp;</td>
               </tr>
               <tr>
-                <td colspan="2" align="left" valign="top"><span class="darkgolden">Açýklama :</span></td>
+                <td colspan="2" align="left" valign="top"><span class="darkgolden">AÃ§Ä±klama :</span></td>
               </tr>
               <tr>
                 <td colspan="2" align="left" valign="top"><textarea name="metin" id="metin" cols="45" rows="5" style="background: #FFFFFF;"></textarea>
@@ -90,7 +90,7 @@ if($giris){
 </table>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

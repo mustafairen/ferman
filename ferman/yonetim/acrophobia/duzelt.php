@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?
 require ("yonetim/db.php");
@@ -39,7 +39,7 @@ if ($id == $oku["user_id"]) {
       <td align="left" valign="top">&nbsp;</td>
     </tr>
     <tr>
-      <td align="left" valign="top">Eski Şifre</td>
+      <td align="left" valign="top">Eski Åifre</td>
       <td align="left" valign="top"><input name="sifre_e" type="password" id="sifre_e"></td>
     </tr>
     <tr>
@@ -47,7 +47,7 @@ if ($id == $oku["user_id"]) {
       <td align="left" valign="top">&nbsp;</td>
     </tr>
     <tr>
-      <td align="left" valign="top">Yeni Şifre</td>
+      <td align="left" valign="top">Yeni Åifre</td>
       <td align="left" valign="top"><label>
         <input name="sifre" type="password" id="sifre">
       </label></td>
@@ -55,16 +55,16 @@ if ($id == $oku["user_id"]) {
     <tr>
       <td align="left" valign="top">&nbsp;</td>
       <td align="left" valign="top">
-      <span class="dipnot">Değiştirmek istemiyorsanız boş bırakın</span>
+      <span class="dipnot">DeÄŸiÅŸtirmek istemiyorsanÄ±z boÅŸ bÄ±rakÄ±n</span>
       &nbsp;</td>
     </tr>
     <tr>
-      <td align="left" valign="top">Şifre Doğrula</td>
+      <td align="left" valign="top">Åifre DoÄŸrula</td>
       <td align="left" valign="top"><input type="password" name="sifre_t" id="sifre_t" /></td>
     </tr>
     <tr>
       <td align="left" valign="top">&nbsp;</td>
-      <td align="left" valign="top"><span class="dipnot">Değiştirmek istemiyorsanız boş bırakın</span></td>
+      <td align="left" valign="top"><span class="dipnot">DeÄŸiÅŸtirmek istemiyorsanÄ±z boÅŸ bÄ±rakÄ±n</span></td>
     </tr>
     <tr>
       <td align="left" valign="top"> Mail</td>
@@ -77,26 +77,26 @@ if ($id == $oku["user_id"]) {
       <td align="left" valign="top">&nbsp;</td>
     </tr>
     <tr>
-      <td align="left" valign="top"> Güvenlik Kodu</td>
+      <td align="left" valign="top"> GÃ¼venlik Kodu</td>
       <td align="left" valign="top"><label>
         <input name="securitycode" type="password" id="securitycode">
       </label></td>
     </tr>
     <tr>
       <td align="left" valign="top">&nbsp;</td>
-      <td align="right" valign="top"><input type="submit" name="button" id="button" value="Güncelle"></td>
+      <td align="right" valign="top"><input type="submit" name="button" id="button" value="GÃ¼ncelle"></td>
     </tr>
   </table>
 </form>
 <?
 }
 }
-//mysql bağlantısının kapatılması
+//mysql baÄŸlantÄ±sÄ±nÄ±n kapatÄ±lmasÄ±
 mysql_close ($baglanti);
 ?>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

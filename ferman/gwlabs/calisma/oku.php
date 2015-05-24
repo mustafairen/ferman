@@ -1,27 +1,27 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <div align="center">
 <table width="250" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td width="138">Çalýþmalarým</td>
-    <td width="112"><a href="?shf=work&amp;islem=ekle" class="red">Çalýþma Ekle</a></td>
+    <td width="138">Ã‡alÄ±ÅŸmalarÄ±m</td>
+    <td width="112"><a href="?shf=work&amp;islem=ekle" class="red">Ã‡alÄ±ÅŸma Ekle</a></td>
   </tr>
 </table>
 
 </div>
 <?php
-//mysql baðlantýsý
+//mysql baÄŸlantÄ±sÄ±
 include("yonetim/db.php");
 ?>
 <?php
@@ -77,18 +77,18 @@ function sayfalama($limit,$sayfano,$satir_sayisi=0,$sayfaadi='',$adresdeger='')
 }  
 ?>
 <?php
-//sql sorgu komutlarý
+//sql sorgu komutlarÄ±
 
-//AÞAÐIDAKÝ AYARLARI KENDÝNÝZE GÖRE DEÐÝÞTÝRÝNÝZ  
-$limit = "5"; // Bir Sayfada Gösterilecek Kayýt Sayýsý  
-$kosul = "ORDER BY `calisma_id` DESC"; //Kayýtlarý Alma Koþulunuz.. Koþul Yoksa Boþ Býrakýnýz...  
+//AÅžAÄžIDAKÄ° AYARLARI KENDÄ°NÄ°ZE GÃ–RE DEÄžÄ°ÅžTÄ°RÄ°NÄ°Z  
+$limit = "5"; // Bir Sayfada GÃ¶sterilecek KayÄ±t SayÄ±sÄ±  
+$kosul = "ORDER BY `calisma_id` DESC"; //KayÄ±tlarÄ± Alma KoÅŸulunuz.. KoÅŸul Yoksa BoÅŸ BÄ±rakÄ±nÄ±z...  
 $tabloadi = "calisma";  
 
-//Toplam Kayýt Sayýsý Alýnýyor 
+//Toplam KayÄ±t SayÄ±sÄ± AlÄ±nÄ±yor 
 $sorgu = mysql_query("SELECT COUNT(*) FROM  $tabloadi $kosul");       
 $satir_sayisi = mysql_result($sorgu, 0);  
 
-//Alttaki Ayarlara Dokunmayýnýz...  
+//Alttaki Ayarlara DokunmayÄ±nÄ±z...  
 @ $sayfa = abs(intval($_GET['sayfa']));  
 if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))  
 {                  
@@ -98,7 +98,7 @@ if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))
   $baslangic = ($sayfa - 1) * $limit;          
 }
 
-//Veriyi Aldýðýnýz Kodlar.. Kendinize Göre Düzenleyiniz...  
+//Veriyi AldÄ±ÄŸÄ±nÄ±z Kodlar.. Kendinize GÃ¶re DÃ¼zenleyiniz...  
 $sorgu = mysql_query("SELECT * FROM $tabloadi $kosul LIMIT $baslangic,$limit");       
 while($oku = mysql_fetch_array($sorgu))
 {
@@ -116,25 +116,25 @@ while($oku = mysql_fetch_array($sorgu))
         <?=$oku[calisma_tarih]?>
       </span>&nbsp;<span class="darkgolden">
         <?=$oku[calisma_gun]?>
-        </span>&nbsp;günü yazýlmýþtýr. @
+        </span>&nbsp;gÃ¼nÃ¼ yazÄ±lmÄ±ÅŸtÄ±r. @
         <span class="darkgolden">
         <?=$oku[calisma_saat]?>
-        </span>        &nbsp;<a href="?shf=work&amp;islem=duzelt&amp;id=<?=$oku[calisma_id]?>" class="text">Düzenle</a>&nbsp;-&nbsp;<a href="?shf=work&amp;islem=sil&amp;id=<?=$oku[calisma_id]?>">Sil</a></p>
+        </span>        &nbsp;<a href="?shf=work&amp;islem=duzelt&amp;id=<?=$oku[calisma_id]?>" class="text">DÃ¼zenle</a>&nbsp;-&nbsp;<a href="?shf=work&amp;islem=sil&amp;id=<?=$oku[calisma_id]?>">Sil</a></p>
     </div>
 </div>
 <div align="center">
 <?php         
 }           
 
-//SAYFA NUMARALARINI YAZDIRAN FONKSÝYONUMUZU ÇAÐIRIYORUZ  
+//SAYFA NUMARALARINI YAZDIRAN FONKSÄ°YONUMUZU Ã‡AÄžIRIYORUZ  
 echo sayfalama($limit,$sayfa,$satir_sayisi,'?shf=work&amp;islem=oku');
-//baðlantýnýn kapatýlmasý
+//baÄŸlantÄ±nÄ±n kapatÄ±lmasÄ±
 mysql_close ($baglanti);
 ?>
 </div>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

@@ -1,15 +1,15 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?
 include("yonetim/db.php");
@@ -21,11 +21,11 @@ while($y_oku = mysql_fetch_array($sorgu)){
     <tr>
       <td align="left" valign="middle"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
         <tr>
-          <td colspan="2" align="center" class="yorum_ekle">Yorumu Düzelt<br />
+          <td colspan="2" align="center" class="yorum_ekle">Yorumu DÃ¼zelt<br />
               <br /></td>
         </tr>
         <tr>
-          <td align="left"><span class="isim">Adýnýz Soyadýnýz</span></td>
+          <td align="left"><span class="isim">AdÄ±nÄ±z SoyadÄ±nÄ±z</span></td>
           <td align="left"><input name="yazar" type="text" id="yazar" value="<?=$y_oku[yorum_yazar]?>" size="15" /></td>
         </tr>
         <tr>
@@ -58,7 +58,7 @@ while($y_oku = mysql_fetch_array($sorgu)){
           <td width="83%" align="left"><input name="postcode" type="password" id="postcode" size="10" /></td>
         </tr>
         <tr>
-          <td colspan="2" align="center"><input type="submit" name="button2" id="button2" value=" Gönder " /></td>
+          <td colspan="2" align="center"><input type="submit" name="button2" id="button2" value=" GÃ¶nder " /></td>
         </tr>
       </table></td>
     </tr>
@@ -67,7 +67,7 @@ while($y_oku = mysql_fetch_array($sorgu)){
 </form>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../../hata.php");
 }
 ?>

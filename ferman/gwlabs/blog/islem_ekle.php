@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <center>
 <br><br>
@@ -28,48 +28,48 @@ $postcode = $_POST["postcode"];
 @include"yonetim/hbv/postcode_kontrol.php";
 
 if ($blog_baslik == "")
-echo "<br><center><b>Konu Başlığı'nı yazmadığınızı algıladı !! 
-<br>Yoksa algı yapılarımız mı farklı ?</b></center>";
+echo "<br><center><b>Konu BaÅŸlÄ±ÄŸÄ±'nÄ± yazmadÄ±ÄŸÄ±nÄ±zÄ± algÄ±ladÄ± !! 
+<br>Yoksa algÄ± yapÄ±larÄ±mÄ±z mÄ± farklÄ± ?</b></center>";
 elseif ($blog_icerik == "")
-echo "<br><center><b>Konu İçeriği'ni yazmadığınızı algıladı !! 
-<br>Yoksa algı yapılarımız mı farklı ?</b></center>";
+echo "<br><center><b>Konu Ä°Ã§eriÄŸi'ni yazmadÄ±ÄŸÄ±nÄ±zÄ± algÄ±ladÄ± !! 
+<br>Yoksa algÄ± yapÄ±larÄ±mÄ±z mÄ± farklÄ± ?</b></center>";
 
 else
 $SQL = "INSERT INTO blog (blog_tarih,blog_saat,blog_gun,blog_baslik,blog_icerik) VALUES ('$blog_tarih','$blog_saat','$blog_gun','$blog_baslik','$blog_icerik')";
 /*
-* sorgu cümlemiz hazır. artık mysql ile bağlantı kuralım
+* sorgu cÃ¼mlemiz hazÄ±r. artÄ±k mysql ile baÄŸlantÄ± kuralÄ±m
 */
 {
 require ("yonetim/db.php");
 }
 /*
-* sql cümlesini mysql e iletiyoruz ve cvp istiyoruz
+* sql cÃ¼mlesini mysql e iletiyoruz ve cvp istiyoruz
 */
 $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
-// Tüh Hata Yaptı. De get haber ver hemen düzeltsin hatasını...
+// TÃ¼h Hata YaptÄ±. De get haber ver hemen dÃ¼zeltsin hatasÄ±nÄ±...
 ?>
-<br>Hata Oluştu.<br>
-Lütfen <a href="javascript: history.go(-1)" class="red">Tekrar Deneyiniz</a></br></br>
+<br>Hata OluÅŸtu.<br>
+LÃ¼tfen <a href="javascript: history.go(-1)" class="red">Tekrar Deneyiniz</a></br></br>
 <?
 exit();
 }
 mysql_close($baglanti);
 ?><br />
-veritabanına kayıt eklenmiştir...<br />
+veritabanÄ±na kayÄ±t eklenmiÅŸtir...<br />
 <br />
-Lütfen Bekleyiniz<br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
-Eğer hala yönlenmediyseniz <a href="?shf=blog&amp;islem=oku" class="red">tıklayınız</a><br />
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=blog&amp;islem=oku" class="red">tÄ±klayÄ±nÄ±z</a><br />
 
 <meta http-equiv="refresh" content="3;URL=?shf=blog&amp;islem=oku">
 </center>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

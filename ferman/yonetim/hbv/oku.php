@@ -1,28 +1,28 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <br />
 <table width="350" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td width="50%" align="center"><a href="?shf=postcode&amp;islem=oku">Post Code<br />
-      Güncelle</a></td>
-    <td width="50%" align="center"><a href="?shf=securitycode&amp;islem=oku&amp;code=security">Güvenlik Kodu<br />
-      Güncelle</a></td>
+      GÃ¼ncelle</a></td>
+    <td width="50%" align="center"><a href="?shf=securitycode&amp;islem=oku&amp;code=security">GÃ¼venlik Kodu<br />
+      GÃ¼ncelle</a></td>
   </tr>
 </table>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

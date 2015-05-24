@@ -1,26 +1,26 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <form id="form2" name="form1" method="post" action="?shf=securitycode&amp;islem=duzeltiliyor">
 <table border="0" cellspacing="0" cellpadding="0"> 
     <tr>
-      <td align="center">Güvenlik Kodu  Güncelle<br />
+      <td align="center">GÃ¼venlik Kodu  GÃ¼ncelle<br />
           <br /></td>
     </tr>
     <tr>
       <td><table border="0" cellspacing="0" cellpadding="0">
         <tr>
-          <td align="left">Güvenlik Kodu</td>
+          <td align="left">GÃ¼venlik Kodu</td>
           <td><input type="password" name="securitycode" id="securitycode" />
           </td>
         </tr>
@@ -29,7 +29,7 @@ if($giris){
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td align="left">Yeni Güvenlik Kodu&nbsp;&nbsp;</td>
+          <td align="left">Yeni GÃ¼venlik Kodu&nbsp;&nbsp;</td>
           <td><input type="password" name="securitycode_y" id="securitycode_y" /></td>
         </tr>
         <tr>
@@ -37,7 +37,7 @@ if($giris){
           <td>&nbsp;</td>
         </tr>
         <tr>
-          <td align="left">Güvenlik Kodu Tekrar&nbsp;&nbsp;</td>
+          <td align="left">GÃ¼venlik Kodu Tekrar&nbsp;&nbsp;</td>
           <td><input type="password" name="securitycode_y_t" id="securitycode_y_t" /></td>
         </tr>
       </table></td>
@@ -46,14 +46,14 @@ if($giris){
       <td align="right">&nbsp;</td>
     </tr>
     <tr>
-      <td align="right"><input type="submit" name="button2" id="button2" value="Güncelle" /></td>
+      <td align="right"><input type="submit" name="button2" id="button2" value="GÃ¼ncelle" /></td>
     </tr>
 </table>
 </form>
 <p>&nbsp;</p>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

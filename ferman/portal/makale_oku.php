@@ -1,5 +1,5 @@
 <?php
-//mysql baðlantýsý
+//mysql baÄŸlantÄ±sÄ±
 @include("yonetim/db.php");
 ?>
 <?php
@@ -55,15 +55,15 @@ function sayfalama($limit,$sayfano,$satir_sayisi=0,$sayfaadi='',$adresdeger='')
 }  
 ?>
 <?php
-//sql sorgu komutlarý
-//AÞAÐIDAKÝ AYARLARI KENDÝNÝZE GÖRE DEÐÝÞTÝRÝNÝZ  
-$limit = "5"; // Bir Sayfada Gösterilecek Kayýt Sayýsý  
+//sql sorgu komutlarÄ±
+//AÅžAÄžIDAKÄ° AYARLARI KENDÄ°NÄ°ZE GÃ–RE DEÄžÄ°ÅžTÄ°RÄ°NÄ°Z  
+$limit = "5"; // Bir Sayfada GÃ¶sterilecek KayÄ±t SayÄ±sÄ±  
 $kosul = "ORDER BY `makale_id` DESC";
 $tabloadi = "makale";  
-//Toplam Kayýt Sayýsý Alýnýyor 
+//Toplam KayÄ±t SayÄ±sÄ± AlÄ±nÄ±yor 
 $sorgu = mysql_query("SELECT COUNT(*) FROM  $tabloadi $kosul");       
 $satir_sayisi = mysql_result($sorgu, 0);  
-//Alttaki Ayarlara Dokunmayýnýz...  
+//Alttaki Ayarlara DokunmayÄ±nÄ±z...  
 @ $sayfa = abs(intval($_GET['sayfa']));  
 if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))  
 {                  
@@ -72,7 +72,7 @@ if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))
 } else {                 
   $baslangic = ($sayfa - 1) * $limit;          
 }
-//Veriyi Aldýðýnýz Kodlar..
+//Veriyi AldÄ±ÄŸÄ±nÄ±z Kodlar..
 $sorgu = mysql_query("SELECT * FROM $tabloadi $kosul LIMIT $baslangic,$limit");       
 while($oku = mysql_fetch_array($sorgu))
 {
@@ -93,7 +93,7 @@ while($oku = mysql_fetch_array($sorgu))
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td align="left" class="darkgolden">Bu konunun <a href="?shf=doc&amp;islem=oku_detay&amp;doc_id=<?=$oku[makale_id]?>"><span class="darkgolden">Tamamýný Oku</span></a>&nbsp;</td>
+      <td align="left" class="darkgolden">Bu konunun <a href="?shf=doc&amp;islem=oku_detay&amp;doc_id=<?=$oku[makale_id]?>"><span class="darkgolden">TamamÄ±nÄ± Oku</span></a>&nbsp;</td>
       </tr>
   </table>
 	</div>
@@ -106,7 +106,7 @@ while($oku = mysql_fetch_array($sorgu))
   <tr>
     <td align="center" valign="middle">
 	<?
-    //SAYFA NUMARALARINI YAZDIRAN FONKSÝYONUMUZU ÇAÐIRIYORUZ
+    //SAYFA NUMARALARINI YAZDIRAN FONKSÄ°YONUMUZU Ã‡AÄžIRIYORUZ
 	echo sayfalama($limit,$sayfa,$satir_sayisi,'?shf=doc&amp;islem=oku');
 	?>
     </td>

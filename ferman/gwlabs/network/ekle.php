@@ -1,19 +1,19 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?><form id="form1" name="form1" method="post" action="?shf=network&amp;islem=ekleniyor">
 <table border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td align="center" valign="middle"><span class="darkgolden">Baðlantý Ekle</span></td>
+    <td align="center" valign="middle"><span class="darkgolden">BaÄŸlantÄ± Ekle</span></td>
   </tr>
   <tr>
     <td><table width="300" border="0" cellspacing="0" cellpadding="0" align="center">
@@ -24,7 +24,7 @@ if($giris){
               <td align="center" valign="top">&nbsp;</td>
             </tr>
             <tr>
-              <td align="left" valign="top"><span class="darkgolden">Ýsim/Kuruluþ :</span></td>
+              <td align="left" valign="top"><span class="darkgolden">Ä°sim/KuruluÅŸ :</span></td>
             </tr>
             <tr>
               <td align="left" valign="top"><input name="konu" type="text"  class="kutu" id="konu" size="30" maxlength="20"/></td>
@@ -36,11 +36,11 @@ if($giris){
               <td align="left" valign="top"><input name="link" type="text" id="link" size="30"  class="kutu"/></td>
             </tr>
             <tr>
-              <td align="left" valign="top"><span class="dipnot">örn: www.site.com [http:// kendiliðinden eklenecektir.]</span></td>
+              <td align="left" valign="top"><span class="dipnot">Ã¶rn: www.site.com [http:// kendiliÄŸinden eklenecektir.]</span></td>
             </tr>
             <tr>
               <td align="left" valign="top"><span class="darkgolden"><br />
-                Açýklama :</span></td>
+                AÃ§Ä±klama :</span></td>
             </tr>
             <tr>
               <td align="left" valign="top"><textarea name="metin" cols="40" rows="2" id="metin" class="kutu"></textarea></td>
@@ -81,7 +81,7 @@ if($giris){
 </table></form>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

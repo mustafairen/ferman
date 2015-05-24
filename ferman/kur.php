@@ -1,17 +1,20 @@
 <?php
 ####################################
 # Ferman                           #
-# Kurulum Dosyası                  #
+# Kurulum DosyasÄ±                  #
 # Web Master: mustafa iren         #
 ####################################
 @require ("yonetim/db.php");
-$KUR = $_GET["KUR"];
+$KUR = NULL;
+if(isset($_GET["KUR"])){
+	$KUR = $_GET["KUR"];
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
-<title>Ferman Kişisel Günce Veritabanı Kurulum</title>
+<title>Ferman KiÅŸisel GÃ¼nce VeritabanÄ± Kurulum</title>
 <style type="text/css">
 <!--
 body,td,th {
@@ -73,19 +76,19 @@ if ($KUR == ""){
           <td align="right" valign="top">&nbsp;</td>
         </tr>
         <tr>
-          <td align="left" valign="top">Ferman Kişisel Günce'ye Hoşgeldiniz.<br />
+          <td align="left" valign="top">Ferman KiÅŸisel GÃ¼nce'ye HoÅŸgeldiniz.<br />
               <br />
-            Kişisel kullanım için <br />
+            KiÅŸisel kullanÄ±m iÃ§in <br />
             <br />
-            mustafa iren  ve Zafer Korucu tarafından geliştirilmiştir.<br />
+            mustafa iren  ve Zafer Korucu tarafÄ±ndan geliÅŸtirilmiÅŸtir.<br />
             <br />
-            Kuruluma başlamak için <a href="?KUR=Start">tıklayınız</a>.</td>
+            Kuruluma baÅŸlamak iÃ§in <a href="?KUR=Start">tÄ±klayÄ±nÄ±z</a>.</td>
         </tr>
         <tr>
           <td align="center" valign="top">&nbsp;</td>
         </tr>
         <tr>
-          <td align="center" valign="top">&copy; 2008 Tüm Hakları Saklıdır.<br /></td>
+          <td align="center" valign="top">&copy; 2008 TÃ¼m HaklarÄ± SaklÄ±dÄ±r.<br /></td>
         </tr>
         <tr>
           <td align="right" valign="top">&nbsp;</td>
@@ -134,21 +137,21 @@ if ($KUR == "Start"){
                     <td width="146">&nbsp;</td>
                   </tr>
                   <tr>
-                    <td align="left">Kullanıcı Adı</td>
+                    <td align="left">KullanÄ±cÄ± AdÄ±</td>
                     <td>
                       
                         <input type="text" name="kadi" id="kadi" />
                                             </td>
                   </tr>
                   <tr>
-                    <td align="left">Şifre</td>
+                    <td align="left">Åifre</td>
                     <td>
                       
                         <input type="password" name="sifre" id="sifre" />
                                             </td>
                   </tr>
                   <tr>
-                    <td align="left">Şifre Tekrar</td>
+                    <td align="left">Åifre Tekrar</td>
                     <td>
                       
                         <input type="password" name="sifre2" id="sifre2" />
@@ -174,13 +177,13 @@ if ($KUR == "Start"){
                       </td>
                   </tr>
                   <tr>
-                    <td align="left">Güvenlik Kodu</td>
+                    <td align="left">GÃ¼venlik Kodu</td>
                     <td>
                       <input type="password" name="security" id="security" />
                       </td>
                   </tr>
                   <tr>
-                    <td align="left">Güvenlik Kodu Tekrar</td>
+                    <td align="left">GÃ¼venlik Kodu Tekrar</td>
                     <td>
                       <input type="password" name="security_t" id="security_t" />
                       </td>
@@ -196,7 +199,7 @@ if ($KUR == "Start"){
                 <td align="left" valign="top">&nbsp;</td>
               </tr>
               <tr>
-                <td align="center" valign="top">&copy; 2008 Tüm Hakları Saklıdır.</td>
+                <td align="center" valign="top">&copy; 2008 TÃ¼m HaklarÄ± SaklÄ±dÄ±r.</td>
               </tr>
             </table>
             </div></td>
@@ -217,7 +220,7 @@ if ($KUR == "Start"){
 <?
 }
 if ($KUR == "Kur"){
-//Veritabanı Oluştur
+//VeritabanÄ± OluÅŸtur
 ?>
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
   <tr>
@@ -238,14 +241,14 @@ if ($KUR == "Kur"){
               <tr>
                 <td align="center" valign="top"><br />
                     <br />
-                  Lütfen Bekleyiniz <img src="resim/lodos/bekleyin_ms2.gif" alt="" width="24" height="24" /> <br />
+                  LÃ¼tfen Bekleyiniz <img src="resim/lodos/bekleyin_ms2.gif" alt="" width="24" height="24" /> <br />
                   <br /></td>
               </tr>
               <tr>
                 <td align="left" valign="top">&nbsp;</td>
               </tr>
               <tr>
-                <td align="center" valign="top">&copy; 2008 Tüm Hakları Saklıdır.</td>
+                <td align="center" valign="top">&copy; 2008 TÃ¼m HaklarÄ± SaklÄ±dÄ±r.</td>
               </tr>
             </table>
             </div></td>
@@ -282,16 +285,16 @@ print '<script>alert(" Formu Eksik Doldurdunuz ! ");history.back(-1);</script>';
 }
 elseif (!preg_match("/[A-Za-z0-9_.-]+@([A-Za-z0-9_]+\.)+[A-Za-z]{2,4}/i", $user_mail))
 {
-print '<script>alert(" Mail Adresi Geçersiz ! ");history.back(-1);</script>';
+print '<script>alert(" Mail Adresi GeÃ§ersiz ! ");history.back(-1);</script>';
 }
 elseif ( $user_sifre != $user_sifre2 ) {
-print '<script>alert(" Şifreler Uyuşmuyor ! ");history.back(-1);</script>';
+print '<script>alert(" Åifreler UyuÅŸmuyor ! ");history.back(-1);</script>';
 }
 elseif ( $postcode != $postcode_t ) {
-print '<script>alert(" Post Kodlar Uyuşmuyor ! ");history.back(-1);</script>';
+print '<script>alert(" Post Kodlar UyuÅŸmuyor ! ");history.back(-1);</script>';
 }
 elseif ( $securitycode != $securitycode_t ) {
-print '<script>alert(" Güvenlik Kodları Uyuşmuyor ! ");history.back(-1);</script>';
+print '<script>alert(" GÃ¼venlik KodlarÄ± UyuÅŸmuyor ! ");history.back(-1);</script>';
 }
 else
 {
@@ -323,7 +326,7 @@ CREATE TABLE `yorum` (
 UNIQUE (`yorum_id`)
 );
 ");
-//Hakkımda
+//HakkÄ±mda
 mysql_query("
 CREATE TABLE `hakkimda` (
 `hakkimda_id` INT(2) UNSIGNED NOT NULL AUTO_INCREMENT ,
@@ -332,7 +335,7 @@ CREATE TABLE `hakkimda` (
 UNIQUE (`hakkimda_id`)
 );
 ");
-//Bağlantılar
+//BaÄŸlantÄ±lar
 mysql_query("
 CREATE TABLE `network` (
 `network_id` INT(5) UNSIGNED NOT NULL AUTO_INCREMENT ,
@@ -342,7 +345,7 @@ CREATE TABLE `network` (
 UNIQUE (`network_id`)
 );
 ");
-//İletişim
+//Ä°letiÅŸim
 mysql_query("
 CREATE TABLE `iletisim` (
 `iletisim_id` INT(2) UNSIGNED NOT NULL AUTO_INCREMENT ,
@@ -352,7 +355,7 @@ CREATE TABLE `iletisim` (
 UNIQUE (`iletisim_id`)
 );
 ");
-//Dökümanlar
+//DÃ¶kÃ¼manlar
 mysql_query("
 CREATE TABLE `makale` (
 `makale_id` INT(7) UNSIGNED collate utf8_turkish_ci NOT NULL AUTO_INCREMENT ,
@@ -364,7 +367,7 @@ CREATE TABLE `makale` (
 UNIQUE (`makale_id`)
 );
 ");
-//Çalışmalarım
+//Ã‡alÄ±ÅŸmalarÄ±m
 mysql_query("
 CREATE TABLE `calisma` (
 `calisma_id` int(7) unsigned NOT NULL auto_increment,
@@ -419,23 +422,23 @@ UNIQUE (`portal_id`)
 );
 ");
 /*          SQL          */
-//Kullanıcı Adı Kontrolü
+//KullanÄ±cÄ± AdÄ± KontrolÃ¼
 $s = @mysql_query("SELECT * FROM user WHERE user_nick='$user_nick'");
 if ( @mysql_num_rows($s) >= 1) 
 {
 ?>
-<script>alert(" <?=$user_nick?> Kullanıcı adı kayıtlı ! ");history.back(-1);</script>
+<script>alert(" <?=$user_nick?> KullanÄ±cÄ± adÄ± kayÄ±tlÄ± ! ");history.back(-1);</script>
 <?
 exit();
 }
 
-//Mail Adresi Kontrolü
+//Mail Adresi KontrolÃ¼
 $sorgu_mail = @mysql_query("SELECT user_mail FROM user WHERE user_mail='$user_mail'");
 if ( @mysql_num_rows($sorgu_mail) >= 1) 
 {
 ?>
 
-<script>alert(" <?=$user_mail?> Mail Adresi kayıtlı ! ");history.back();</script>
+<script>alert(" <?=$user_mail?> Mail Adresi kayÄ±tlÄ± ! ");history.back();</script>
 <?
 exit();
 }
@@ -466,7 +469,7 @@ mysql_query("
 INSERT INTO `$veritabani`.`portal` (`portal_avatar` ,`portal_nick` ) VALUES ('resim/ferman.jpg', 'Ferman');
 ");
 }
-//Kod Kontrolü
+//Kod KontrolÃ¼
 $code_kontrol = @mysql_query("SELECT code_id FROM code");
 if ( @mysql_num_rows($code_kontrol) == 0) 
 {
@@ -481,7 +484,7 @@ INSERT INTO `$veritabani`.`code` (`securitycode` ,`postcode` ) VALUES ('$user_se
 }
 ?>
 <?php
-//Soz Söz
+//Soz SÃ¶z
 if ($KUR == "Finish"){
 ?>
 <br />
@@ -499,22 +502,22 @@ if ($KUR == "Finish"){
           <td align="center" valign="top"><img src="resim/lodos/banner.jpg" alt="" width="465" height="80" /></td>
         </tr>
         <tr>
-          <td align="center" valign="top"><p>Kurulum İşlemleri tamamlanmıştır. <br />
+          <td align="center" valign="top"><p>Kurulum Ä°ÅŸlemleri tamamlanmÄ±ÅŸtÄ±r. <br />
             <br />
-            <span class="red">Ana Dizinde bulunan Kur.php dosyasını lütfen siliniz.</span><br />
+            <span class="red">Ana Dizinde bulunan Kur.php dosyasÄ±nÄ± lÃ¼tfen siliniz.</span><br />
             <br />
-            Ferman Kişisel Günce'yi Tercih Ettiğiniz için;<br />
-            TEŞEKKÜR EDERİZ
+            Ferman KiÅŸisel GÃ¼nce'yi Tercih EttiÄŸiniz iÃ§in;<br />
+            TEÅEKKÃœR EDERÄ°Z
             ...<br />
              
                 <br />
-              Ferman Yönetim Paneli için <a href="ferman.php">tıklayınız</a>.</p></td>
+              Ferman YÃ¶netim Paneli iÃ§in <a href="ferman.php">tÄ±klayÄ±nÄ±z</a>.</p></td>
         </tr>
         <tr>
           <td align="left" valign="top">&nbsp;</td>
         </tr>
         <tr>
-          <td align="center" valign="top">&copy; 2008 Tüm Hakları Saklıdır.</td>
+          <td align="center" valign="top">&copy; 2008 TÃ¼m HaklarÄ± SaklÄ±dÄ±r.</td>
         </tr>
       </table>
       </div></td>

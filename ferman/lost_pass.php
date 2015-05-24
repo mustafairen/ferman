@@ -1,20 +1,20 @@
 <?
                                         ####################################
                                         # Ferman                           #
-                                        # Yönetim Sayfası                  #
+                                        # YÃ¶netim SayfasÄ±                  #
                                         # Web Master: m. iren | z. korucu  #
                                         ####################################
 @session_start();
 include "yonetim/db.php";
 ?>
 <!-- Design-Turk.Com -->
-<!-- Grafik ve Web Tasarım Grubu -->
+<!-- Grafik ve Web TasarÄ±m Grubu -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
-<title>Ferman Şifre İstiyorum</title>
-<meta name="generator" content="Design-Turk Grafik ve Web Tasarım Grubu" /> <!-- leave this for stats -->
+<title>Ferman Åifre Ä°stiyorum</title>
+<meta name="generator" content="Design-Turk Grafik ve Web TasarÄ±m Grubu" /> <!-- leave this for stats -->
 <link rel="stylesheet" href="lost_pass.css" type="text/css" media="screen" />
 <meta name='robots' content='noindex,nofollow' />
 <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
@@ -41,7 +41,7 @@ include "yonetim/db.php";
                 </div></td>
               </tr>
               <tr>
-                <td>Güvenlik Kodu</td>
+                <td>GÃ¼venlik Kodu</td>
                 <td><div id="input"><input name="securitycode" type="password" id="securitycode" />
                 </div></td>
               </tr>

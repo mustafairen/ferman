@@ -1,5 +1,5 @@
 <?php
-//mysql baðlantýsý
+//mysql baÄŸlantÄ±sÄ±
 @include("yonetim/db.php");
 $sorgu_avatar = mysql_query("SELECT * FROM portal");       
 while($oku_avtr = mysql_fetch_array($sorgu_avatar))
@@ -9,6 +9,6 @@ $nick=$oku_avtr[portal_nick];
 }
 ?>
 <?
-//baðlantýnýn kapatýlmasý
+//baÄŸlantÄ±nÄ±n kapatÄ±lmasÄ±
 @mysql_close ($baglanti);
 ?>

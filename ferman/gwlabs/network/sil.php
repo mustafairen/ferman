@@ -1,20 +1,20 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <form name="form1" method="post" action="?shf=network&islem=siliniyor&id=<?=$id?>">
 <table border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
-    <td>Veriyi Silmek Ýçin Postcode Gitmelisiniz !</td>
+    <td>Veriyi Silmek Ä°Ã§in Postcode Gitmelisiniz !</td>
   </tr>
   <tr>
     <td>&nbsp;</td>
@@ -35,7 +35,7 @@ if($giris){
 </form>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

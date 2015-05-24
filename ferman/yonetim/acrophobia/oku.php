@@ -1,18 +1,18 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <center>
-<div><a href="?shf=user&islem=ekle" class="darkgolden">Yeni Yönetici Ekle</a><br /><br /></div>
+<div><a href="?shf=user&islem=ekle" class="darkgolden">Yeni YÃ¶netici Ekle</a><br /><br /></div>
   <div>
   <?php
 include("yonetim/db.php");
@@ -57,11 +57,11 @@ while ($oku = mysql_fetch_array($sql)) {
             <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="8%">&nbsp;</td>
-                <td width="51%"><a href="?shf=user&amp;islem=duzelt&amp;id=<?=$oku[user_id]?>"><span class="darkgolden">Güncelle</span></a></td>
+                <td width="51%"><a href="?shf=user&amp;islem=duzelt&amp;id=<?=$oku[user_id]?>"><span class="darkgolden">GÃ¼ncelle</span></a></td>
                 <td width="41%" align="left"><span class="gizle">
                   <input name="bolum" type="text" id="kadi" value="<?=$oku[user_nick]?>" size="1" />
                   <?=$oku["user_id"]?>
-                </span> <a href="?shf=user&amp;islem=sil&amp;id=<?=$oku[user_id]?>"><span class="darkgolden">Üyeyi Sil</span></a></td>
+                </span> <a href="?shf=user&amp;islem=sil&amp;id=<?=$oku[user_id]?>"><span class="darkgolden">Ãœyeyi Sil</span></a></td>
               </tr>
             </table></td>
           </tr>
@@ -79,7 +79,7 @@ while ($oku = mysql_fetch_array($sql)) {
 </center>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

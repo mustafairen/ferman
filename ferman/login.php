@@ -1,7 +1,7 @@
 <?
                                         ####################################
                                         # Ferman                           #
-                                        # Yönetim Sayfası                  #
+                                        # YÃ¶netim SayfasÄ±                  #
                                         # Web Master: m. iren | z. korucu  #
                                         ####################################
 @session_start();
@@ -13,8 +13,8 @@ if ( empty($HTTP_POST_VARS)){
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head profile="http://gmpg.org/xfn/11">
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1254" />
-<title>Ferman Kişisel Günce Yönetim Login</title>
-<meta name="generator" content="Design-Turk Grafik ve Web Tasarım Grubu" /> <!-- leave this for stats -->
+<title>Ferman KiÅŸisel GÃ¼nce YÃ¶netim Login</title>
+<meta name="generator" content="Design-Turk Grafik ve Web TasarÄ±m Grubu" /> <!-- leave this for stats -->
 <link rel="stylesheet" href="Login.css" type="text/css" media="screen" />
 <meta name='robots' content='noindex,nofollow' />
 <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
@@ -36,11 +36,11 @@ if ( empty($HTTP_POST_VARS)){
             <table width="90%" border="0" cellspacing="4" cellpadding="0">
                   <form action="<? echo $PHP_SELF; ?>" method="post">
               <tr>
-                <td>Kullanıcı Adı</td>
+                <td>KullanÄ±cÄ± AdÄ±</td>
                 <td><div id="input"><input name="nick" type="text" id="nick" /></div></td>
               </tr>
               <tr>
-                <td>Şifre</td>
+                <td>Åifre</td>
                 <td><div id="input"><input name="sifre" type="password" /></div></td>
               </tr>
               <tr>
@@ -59,7 +59,7 @@ if ( empty($HTTP_POST_VARS)){
 	   $sorgu = @mysql_query($tablo);
 	   if ( @mysql_num_rows($sorgu) < 1 ) {
 	   ?>
-                  <script>alert(" Kullanıcı Adı ve/veya Şifre Hatalı !");history.back(-1);</script>
+                  <script>alert(" KullanÄ±cÄ± AdÄ± ve/veya Åifre HatalÄ± !");history.back(-1);</script>
                   <?
 				  exit();
 	   } else {	   

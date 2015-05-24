@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 $user_nick = trim($_POST['nick']);
 $user_sifre = trim($_POST['sifre']);
 $user_sifre2 = trim($_POST['sifre2']);
@@ -24,10 +24,10 @@ print '<script>alert(" Formu Eksik Doldurdunuz ! ");history.back(-1);</script>';
 }
 elseif (!preg_match("/[A-Za-z0-9_.-]+@([A-Za-z0-9_]+\.)+[A-Za-z]{2,4}/i", $user_mail))
 {
-print '<script>alert(" Mail Adresi Geçersiz ! ");history.back(-1);</script>';
+print '<script>alert(" Mail Adresi GeÃ§ersiz ! ");history.back(-1);</script>';
 }
 elseif ( $user_sifre != $user_sifre2 ) {
-print '<script>alert(" Şifreler Uyuşmuyor ! ");history.back(-1);</script>';
+print '<script>alert(" Åifreler UyuÅŸmuyor ! ");history.back(-1);</script>';
 }
 else
 {
@@ -36,7 +36,7 @@ $s = @mysql_query("SELECT user_id FROM user WHERE user_nick='$user_nick'");
 if ( @mysql_num_rows($s) >= 1) 
 {
 ?>
-<script>alert(" <?=$user_nick?> Kullanıcı adı kayıtlı ! ");history.back(-1);</script>
+<script>alert(" <?=$user_nick?> KullanÄ±cÄ± adÄ± kayÄ±tlÄ± ! ");history.back(-1);</script>
 <?
 exit();
 }
@@ -44,7 +44,7 @@ $sorgu_mail = @mysql_query("SELECT user_mail FROM user WHERE user_mail='$user_ma
 if ( @mysql_num_rows($sorgu_mail) >= 1) 
 {
 ?>
-<script>alert(" <?=$user_mail?> Mail Adresi kayıtlı ! ");history.back();</script>
+<script>alert(" <?=$user_mail?> Mail Adresi kayÄ±tlÄ± ! ");history.back();</script>
 <?
 exit();
 }
@@ -59,20 +59,20 @@ $tablo = "INSERT INTO user (user_nick, user_sifre, user_lost_sifre, user_mail) V
 if ( mysql_query($tablo) ) {
 ?>
 <script>
-  alert(" Kayıt işlemi Tamamlandı ");
+  alert(" KayÄ±t iÅŸlemi TamamlandÄ± ");
   window.top.location = '?shf=user&islem=oku';
 </script>
 <?
 } else {
 ?>
-<script>alert("  Hata Algılandı Tekrar Deneyiniz ! ");history.back(-1);</script>
+<script>alert("  Hata AlgÄ±landÄ± Tekrar Deneyiniz ! ");history.back(-1);</script>
 <?
 }
 }
 ?>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

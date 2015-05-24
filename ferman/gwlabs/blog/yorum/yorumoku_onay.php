@@ -1,18 +1,18 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <div align="center">
-  <h3><a href="?shf=yorum&islem=oku_tum" target="_self" class="darkgolden"><span class="darkgolden">Onaysýz Yorumlar</span></a>&nbsp;|&nbsp;Onaylý Yorumlar</h3>
+  <h3><a href="?shf=yorum&islem=oku_tum" target="_self" class="darkgolden"><span class="darkgolden">OnaysÄ±z Yorumlar</span></a>&nbsp;|&nbsp;OnaylÄ± Yorumlar</h3>
 </div>
 <?php
 @include("yonetim/db.php");
@@ -69,18 +69,18 @@ function sayfalama($limit,$sayfano,$satir_sayisi=0,$sayfaadi='',$adresdeger='')
 }  
 ?>
 <?php
-//sql sorgu komutlarý
+//sql sorgu komutlarÄ±
 
-//AÞAÐIDAKÝ AYARLARI KENDÝNÝZE GÖRE DEÐÝÞTÝRÝNÝZ  
-$limit = "7"; // Bir Sayfada Gösterilecek Kayýt Sayýsý  
-$kosul = " WHERE yorum_onay='1' ORDER BY `yorum_id` DESC"; //Kayýtlarý Alma Koþulunuz.. Koþul Yoksa Boþ Býrakýnýz...  
+//AÅžAÄžIDAKÄ° AYARLARI KENDÄ°NÄ°ZE GÃ–RE DEÄžÄ°ÅžTÄ°RÄ°NÄ°Z  
+$limit = "7"; // Bir Sayfada GÃ¶sterilecek KayÄ±t SayÄ±sÄ±  
+$kosul = " WHERE yorum_onay='1' ORDER BY `yorum_id` DESC"; //KayÄ±tlarÄ± Alma KoÅŸulunuz.. KoÅŸul Yoksa BoÅŸ BÄ±rakÄ±nÄ±z...  
 $tabloadi = "yorum";  
 
-//Toplam Kayýt Sayýsý Alýnýyor 
+//Toplam KayÄ±t SayÄ±sÄ± AlÄ±nÄ±yor 
 $sorgu = mysql_query("SELECT COUNT(*) FROM  $tabloadi $kosul");       
 $satir_sayisi = mysql_result($sorgu, 0);  
 
-//Alttaki Ayarlara Dokunmayýnýz...  
+//Alttaki Ayarlara DokunmayÄ±nÄ±z...  
 @ $sayfa = abs(intval($_GET['sayfa']));  
 if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))  
 {                  
@@ -90,7 +90,7 @@ if(empty($sayfa) || $sayfa > ceil($satir_sayisi/$limit))
   $baslangic = ($sayfa - 1) * $limit;          
 }
 
-//Veriyi Aldýðýnýz Kodlar.. Kendinize Göre Düzenleyiniz...  
+//Veriyi AldÄ±ÄŸÄ±nÄ±z Kodlar.. Kendinize GÃ¶re DÃ¼zenleyiniz...  
 $y_sorgu = @mysql_query("SELECT * FROM $tabloadi $kosul LIMIT $baslangic,$limit");       
 while($y_oku = @mysql_fetch_array($y_sorgu))
 {
@@ -110,9 +110,9 @@ while($y_oku = @mysql_fetch_array($y_sorgu))
         <?=$y_oku[yorum_saat]?>
         </span>
         | <?=$y_oku[yazar_mail]?>
-      </span>&nbsp;<a href="?shf=yorum&amp;islem=edit&amp;id=<?=$y_oku[yorum_id]?>&amp;blog_id=<?=$y_oku[bolum_id]?>" class="text">Düzenle</a>&nbsp;-&nbsp;<a href="?shf=yorum&amp;islem=sil&amp;id=<?=$y_oku[yorum_id]?>&amp;blog_id=<?=$y_oku[bolum_id]?>">Sil</a>&nbsp;-&nbsp;
+      </span>&nbsp;<a href="?shf=yorum&amp;islem=edit&amp;id=<?=$y_oku[yorum_id]?>&amp;blog_id=<?=$y_oku[bolum_id]?>" class="text">DÃ¼zenle</a>&nbsp;-&nbsp;<a href="?shf=yorum&amp;islem=sil&amp;id=<?=$y_oku[yorum_id]?>&amp;blog_id=<?=$y_oku[bolum_id]?>">Sil</a>&nbsp;-&nbsp;
 	  <? if($y_oku[yorum_onay]=="0"){?><a href="?shf=yorum&amp;islem=onay&amp;id=<?=$y_oku[yorum_id]?>&amp;blog_id=<?=$y_oku[bolum_id]?>">Onayla</a><? }?>
-				   <? if($y_oku[yorum_onay]=="1"){?><a href="?shf=yorum&amp;islem=onayk&amp;id=<?=$y_oku[yorum_id]?>&amp;blog_id=<?=$y_oku[bolum_id]?>">Onayý Kaldýr</a><? }?></p>
+				   <? if($y_oku[yorum_onay]=="1"){?><a href="?shf=yorum&amp;islem=onayk&amp;id=<?=$y_oku[yorum_id]?>&amp;blog_id=<?=$y_oku[bolum_id]?>">OnayÄ± KaldÄ±r</a><? }?></p>
   </div>
 </div>
 <p>
@@ -120,13 +120,13 @@ while($y_oku = @mysql_fetch_array($y_sorgu))
 </p>
 <div align="center">
 <?
- //SAYFA NUMARALARINI YAZDIRAN FONKSÝYONUMUZU ÇAÐIRIYORUZ 
+ //SAYFA NUMARALARINI YAZDIRAN FONKSÄ°YONUMUZU Ã‡AÄžIRIYORUZ 
 echo sayfalama($limit,$sayfa,$satir_sayisi,'?shf=yorum&amp;islem=oku_onay');
 ?>
 </div>
 	   <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

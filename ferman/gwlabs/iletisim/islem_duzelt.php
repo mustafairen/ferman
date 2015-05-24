@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 
 <span class="hidden">
@@ -27,35 +27,35 @@ $iletisim_icerik = $_POST["metin"];
 
 $SQL = "UPDATE iletisim SET iletisim_mail = '$iletisim_mail', iletisim_msn = '$iletisim_msn', iletisim_icerik = '$iletisim_icerik' WHERE iletisim_id = '{$_POST[id]}'";
 /*
-* sorgu cümlemiz hazır. artık mysql ile bağlantı kuralım
+* sorgu cÃ¼mlemiz hazÄ±r. artÄ±k mysql ile baÄŸlantÄ± kuralÄ±m
 */
 {
 include ("yonetim/db.php");
 }
 /*
-* sql cümlesini mysql e iletiyoruz ve cvp istiyoruz
+* sql cÃ¼mlesini mysql e iletiyoruz ve cvp istiyoruz
 */
 $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
-echo "sorgu yapılamadı";
+echo "sorgu yapÄ±lamadÄ±";
 exit();
 }
 mysql_close($baglanti);
 //sorgu bitti
 ?><center><br />
-kayıt veritabanından düzeltilmiştir...<br /><br />
-Lütfen Bekleyiniz<br />
+kayÄ±t veritabanÄ±ndan dÃ¼zeltilmiÅŸtir...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="3;URL=?shf=iletisim&amp;islem=oku">
 
-Eğer hala yönlenmediyseniz <a href="?shf=iletisim&amp;islem=oku" class="red">tıklayınız</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=iletisim&amp;islem=oku" class="red">tÄ±klayÄ±nÄ±z</a>
 </center>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

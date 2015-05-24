@@ -1,26 +1,26 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["cwuser_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?php
-//********** Network sayfasý **********
+//********** Network sayfasÄ± **********
 ////////////////////////////////////
 
-//kategoriye göre okuma iþlemi
+//kategoriye gÃ¶re okuma iÅŸlemi
 if ($shf == "network" && $islem == "oku")
 {
 include "gwlabs/network/oku.php";
 }
-//kategorideki veriye id'ye göre okuma
+//kategorideki veriye id'ye gÃ¶re okuma
 if ($shf == "network" && $islem == "oku_detay" && $id == $_GET["network_id"])
 {
 include "gwlabs/network/konuoku.php";
@@ -30,7 +30,7 @@ if ($shf == "network" && $islem == "ekle")
 {
 include "gwlabs/network/ekle.php";
 }
-// veri ekleme iþlemi
+// veri ekleme iÅŸlemi
 if ($shf == "network" && $islem == "ekleniyor")
 {
 include "gwlabs/network/islem_ekle.php";
@@ -40,28 +40,28 @@ if ($shf == "network" && $islem == "sil")
 {
 include "gwlabs/network/sil.php";
 }
-//veri silme iþlemi
+//veri silme iÅŸlemi
 if ($shf == "network" && $islem == "siliniyor")
 {
 include "gwlabs/network/islem_sil.php";
 }
-//veri düzeneleme
+//veri dÃ¼zeneleme
 if ($shf == "network" && $islem == "duzelt")
 {
 include "gwlabs/network/duzelt.php";
 }
-//veri düzenleme iþlemi
+//veri dÃ¼zenleme iÅŸlemi
 if ($shf == "network" && $islem == "duzeltiliyor")
 {
 include "gwlabs/network/islem_duzelt.php";
 }
 /*
-sayfa karar kontrol mekanizmasý sonu
+sayfa karar kontrol mekanizmasÄ± sonu
 */
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

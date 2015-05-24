@@ -1,15 +1,15 @@
 <?
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
-// giriş yapılmış ise $giris true olmalı
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <center><br><br>
 <span class="gizle">
@@ -26,45 +26,45 @@ $calisma_icerik = $_POST["metin"];
 @include"yonetim/hbv/postcode_kontrol.php";
 
 if ($calisma_baslik == "")
-echo "<br><br><center><b>Konu Başlığı'nı yazmadığınızı algıladı !! Yoksa algı yapılarımız mı farklı ?</b></center>";
+echo "<br><br><center><b>Konu BaÅŸlÄ±ÄŸÄ±'nÄ± yazmadÄ±ÄŸÄ±nÄ±zÄ± algÄ±ladÄ± !! Yoksa algÄ± yapÄ±larÄ±mÄ±z mÄ± farklÄ± ?</b></center>";
 elseif ($calisma_icerik == "")
-echo "<br><br><center><b>Konu İçeriği'ni yazmadığınızı algıladı !! Yoksa algı yapılarımız mı farklı ?</b></center>";
+echo "<br><br><center><b>Konu Ä°Ã§eriÄŸi'ni yazmadÄ±ÄŸÄ±nÄ±zÄ± algÄ±ladÄ± !! Yoksa algÄ± yapÄ±larÄ±mÄ±z mÄ± farklÄ± ?</b></center>";
 
 else
 $SQL = "INSERT INTO calisma (calisma_tarih,calisma_saat,calisma_gun,calisma_baslik,calisma_icerik) VALUES (\"$calisma_tarih\",\"$calisma_saat\",\"$calisma_gun\",\"$calisma_baslik\",\"$calisma_icerik\")"; //'$_POST[konu]','$_POST[metin]'
 /*
-* sorgu cümlemiz hazır. artık mysql ile bağlantı kuralım
+* sorgu cÃ¼mlemiz hazÄ±r. artÄ±k mysql ile baÄŸlantÄ± kuralÄ±m
 */
 {
 require ("yonetim/db.php");
 }
 /*
-* sql cümlesini mysql e iletiyoruz ve cvp istiyoruz
+* sql cÃ¼mlesini mysql e iletiyoruz ve cvp istiyoruz
 */
 $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
-echo "<br>Sorgulama işlemi gerçekleştirilemedi. Lütfen Tekrar Deneyiniz.</br></br>";
+echo "<br>Sorgulama iÅŸlemi gerÃ§ekleÅŸtirilemedi. LÃ¼tfen Tekrar Deneyiniz.</br></br>";
 ?>
-<a href="javascript: history.go(-1)" class="red">Geri Dön</a>
+<a href="javascript: history.go(-1)" class="red">Geri DÃ¶n</a>
 <?
 exit();
 }
 mysql_close($baglanti);
 ?><br />
-veritabanına kayıt eklenmiştir...<br />
+veritabanÄ±na kayÄ±t eklenmiÅŸtir...<br />
 <br />
-Lütfen Bekleyiniz<br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
-Eğer hala yönlenmediyseniz <a href="?shf=work&amp;islem=oku" class="red">tıklayınız</a><br />
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=work&amp;islem=oku" class="red">tÄ±klayÄ±nÄ±z</a><br />
 
 <meta http-equiv="refresh" content="3;URL=?shf=work&amp;islem=oku">
 </center>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

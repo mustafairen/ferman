@@ -1,15 +1,15 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <? 
 $securitycode = trim($_POST['securitycode']);
@@ -22,7 +22,7 @@ empty($securitycode) || empty($securitycode_y) || empty($securitycode_y_t)
 print '<script>alert(" Formu Eksik Doldurdunuz ! ");history.back(-1);</script>';
 }
 elseif ( $securitycode_y != $securitycode_y_t ) {
-print '<script>alert(" Yeni Post Kodlar Uyuþmuyor ! ");history.back(-1);</script>';
+print '<script>alert(" Yeni Post Kodlar UyuÅŸmuyor ! ");history.back(-1);</script>';
 }
 else
 {
@@ -32,31 +32,31 @@ include ("yonetim/db.php");
 $securitycode_kontrol = mysql_query("select code_id from code where securitycode = '".$securitycode1."'");
 if( mysql_num_rows($securitycode_kontrol) != 1 )
 {
-print '<script>alert("Yanlýþ Güvenlik Kodu girdiniz!");history.back(-1);</script>';
+print '<script>alert("YanlÄ±ÅŸ GÃ¼venlik Kodu girdiniz!");history.back(-1);</script>';
 exit; 
 }
 $SQL = "UPDATE code SET securitycode = '$securitycode_y1'";
 $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
-echo "sorgu yapýlamadý";
+echo "sorgu yapÄ±lamadÄ±";
 exit();
 }
 }
 mysql_close($baglanti);
 //sorgu bitti
 ?><br />
-kayýt veritabanýndan düzeltilmiþtir...<br /><br />
-Lütfen Bekleyiniz<br />
+kayÄ±t veritabanÄ±ndan dÃ¼zeltilmiÅŸtir...<br /><br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms.gif" width="32" height="32" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="2;URL=?shf=ayarlar&amp;islem=oku">
 
-Eðer hala yönlenmediyseniz <a href="?shf=ayarlar&amp;islem=oku" class="red">týklayýnýz</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="?shf=ayarlar&amp;islem=oku" class="red">tÄ±klayÄ±nÄ±z</a>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../hata.php");
 }
 ?>

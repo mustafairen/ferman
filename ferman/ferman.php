@@ -1,33 +1,34 @@
 <?
                                         ####################################
                                         # Ferman                           #
-                                        # Yönetim Sayfası                  #
+                                        # YÃ¶netim SayfasÄ±                  #
                                         # Web Master: m. iren | z. korucu  #
                                         ####################################
-//giriş kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalım
+// oturumu baslatalÄ±m
 @session_start();
-// giriş bilgilerini alalım.
-$giris=$_SESSION["giris"];
-$ad=$_SESSION["user_kadi"];
-// giriş kontrolü yapalım
+// giriÅŸ bilgilerini alalÄ±m.
+
+@$giris=$_SESSION["giris"];
+@$ad=$_SESSION["user_kadi"];
+// giriÅŸ kontrolÃ¼ yapalÄ±m
 if($giris){
-// giriş yapılmış hoşgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
-<title><?=$_SESSION["user_kadi"]?> &delta; Ferman Yönetim Paneli'ne Hoş Geldiniz</title>
+<title><?=$_SESSION["user_kadi"]?> &delta; Ferman YÃ¶netim Paneli'ne HoÅŸ Geldiniz</title>
 <link href="panel.css" rel="stylesheet" type="text/css" />
 <!-- eksantrik efektler -->
 <script src="gwlabs/lib/prototype.js" type="text/javascript"></script>
 <script src="gwlabs/src/scriptaculous.js" type="text/javascript"></script>
 <script src="gwlabs/src/unittest.js" type="text/javascript"></script>
-<!-- metin editörü -->
+<!-- metin editÃ¶rÃ¼ -->
 <script language="JavaScript" type="text/javascript" src="gwlabs/sehri_webmaster/wysiwyg.js"></script>
-<!-- Flash çerçeve engeli -->
+<!-- Flash Ã§erÃ§eve engeli -->
 <script src="Scripts/AC_RunActiveContent.js" type="text/javascript"></script>
 <script type="text/javascript" src="TypingText.js"></script>
 </head>
@@ -35,48 +36,48 @@ if($giris){
 <div id="header">
 	<div id="logo">
 		<h1>Ferman</h1>
-	  <h2><a href="ferman.php">Yönetim Anasayfa</a></h2>
+	  <h2><a href="ferman.php">YÃ¶netim Anasayfa</a></h2>
   </div>
 	<div id="menu">
 		<ul>
         <!-- <li class="active"> -->
-			<li <? if ($shf== "?shf=blog&amp;islem=oku") print"class=\"active\""; else print ""; ?>><a href="?shf=blog&amp;islem=oku">Günlüğüm</a></li>
-			<li><a href="?shf=doc&amp;islem=oku">Dökümanlar</a></li>
-			<li><a href="?shf=work&amp;islem=oku">Çalışmalarım</a></li>
-			<li><a href="?shf=network&amp;islem=oku">Bağlantılar</a></li>
-			<li><a href="?shf=hakkimda&amp;islem=oku">Hakkımda</a></li>
-			<li><a href="?shf=iletisim&amp;islem=oku">İletişim</a></li>
+			<li <? if ($shf== "?shf=blog&amp;islem=oku") print"class=\"active\""; else print ""; ?>><a href="?shf=blog&amp;islem=oku">GÃ¼nlÃ¼ÄŸÃ¼m</a></li>
+			<li><a href="?shf=doc&amp;islem=oku">DÃ¶kÃ¼manlar</a></li>
+			<li><a href="?shf=work&amp;islem=oku">Ã‡alÄ±ÅŸmalarÄ±m</a></li>
+			<li><a href="?shf=network&amp;islem=oku">BaÄŸlantÄ±lar</a></li>
+			<li><a href="?shf=hakkimda&amp;islem=oku">HakkÄ±mda</a></li>
+			<li><a href="?shf=iletisim&amp;islem=oku">Ä°letiÅŸim</a></li>
             <li><a href="?shf=ayarlar&amp;islem=oku">Ayarlar</a></li>
 		</ul>
 	</div>
 </div>
 <div id="page">
-<div align="right"><?=$_SESSION["user_kadi"]?>&nbsp;&nbsp;<a href="cikis.php">Çıkış Yap</a></div>
+<div align="right"><?=$_SESSION["user_kadi"]?>&nbsp;&nbsp;<a href="cikis.php">Ã‡Ä±kÄ±ÅŸ Yap</a></div>
 	<div id="content">
 		<div style="margin-bottom: 20px;">
         <div align="center">
         <?php
 		@setlocale(LC_ALL, 'turkish');
-		//giriş bölümü
+		//giriÅŸ bÃ¶lÃ¼mÃ¼
 		if ($shf == "")
 		{
 		?><br />
         <img src="resim/panel/ferman.png" width="105" height="129" border="0" />
         <br /><br />
-            Ferman Yönetim Merkezine Hoş Geldiniz.
-		    <br>Menüler yardımı ile gerekli değişiklikleri gerçekleştirebilirsiniz<br><br>
+            Ferman YÃ¶netim Merkezine HoÅŸ Geldiniz.
+		    <br>MenÃ¼ler yardÄ±mÄ± ile gerekli deÄŸiÅŸiklikleri gerÃ§ekleÅŸtirebilirsiniz<br><br>
 		    <br>
 		<?
 		}
-		//giriş bölümü sonu
+		//giriÅŸ bÃ¶lÃ¼mÃ¼ sonu
 		/*
-		sayfa karar kontrol mekanizması başlangıcı
+		sayfa karar kontrol mekanizmasÄ± baÅŸlangÄ±cÄ±
 		*/
 		{
 		@include "yonetim/kkk.php";
 		}
 		/*
-		sayfa karar kontrol mekanizması sonu
+		sayfa karar kontrol mekanizmasÄ± sonu
 		*/
 		?>
         </div>
@@ -104,14 +105,14 @@ if($giris){
 </div>
 <!-- end page -->
 <div id="footer">
-	<p id="legal">&copy;2008 <a href="http://ferman.mustafairen.com/" target="_blank">Ferman Kişisel Günce</a>. Designed by <a href="http://www.design-turk.com/" target="_blank">Design-Turk</a></p>
-	<p id="links"><a href="?shf=info&islem=oku">Hakkında</a> | <a href="?shf=help&islem=oku">Yardım</a> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
+	<p id="legal">&copy;2008 <a href="http://ferman.mustafairen.com/" target="_blank">Ferman KiÅŸisel GÃ¼nce</a>. Designed by <a href="http://www.design-turk.com/" target="_blank">Design-Turk</a></p>
+	<p id="links"><a href="?shf=info&islem=oku">HakkÄ±nda</a> | <a href="?shf=help&islem=oku">YardÄ±m</a> | <a href="http://validator.w3.org/check/referer" title="This page validates as XHTML 1.0 Transitional"><abbr title="eXtensible HyperText Markup Language">XHTML</abbr></a> | <a href="http://jigsaw.w3.org/css-validator/check/referer" title="This page validates as CSS"><abbr title="Cascading Style Sheets">CSS</abbr></a></p>
 </div>
 </body>
 </html>
 <?
 }else{
-// giriş yapılmamış ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 include ("login.php");
 }
 ?>

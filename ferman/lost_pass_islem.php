@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9" />
-<title>Ferman Şifre İstiyorum</title>
+<title>Ferman Åifre Ä°stiyorum</title>
 <link rel="stylesheet" href="gw.css" type="text/css" media="screen" />
 </head>
 
@@ -15,7 +15,7 @@ $securitycode=md5($_POST[securitycode]);
 $securitycode_kontrol = mysql_query("select code_id from code where securitycode = '".$securitycode."'");
 if( mysql_num_rows($securitycode_kontrol) != 1 )
 {
-print '<script>alert("Yanlış Güvenlik Kodu girdiniz!");history.back();</script>';
+print '<script>alert("YanlÄ±ÅŸ GÃ¼venlik Kodu girdiniz!");history.back();</script>';
 exit;
 } 
 ?>
@@ -23,11 +23,11 @@ exit;
 $mail=trim($_POST['lost_mail']);
 if(empty($mail))
 {
-print '<script>alert(" Lütfen Mail Adresinizi Giriniz ! ");history.back(-1);</script>';
+print '<script>alert(" LÃ¼tfen Mail Adresinizi Giriniz ! ");history.back(-1);</script>';
 }
 elseif (!preg_match("/[A-Za-z0-9_.-]+@([A-Za-z0-9_]+\.)+[A-Za-z]{2,4}/i", $mail))
 {
-print '<script>alert(" Mail Adresi Geçersiz ! ");history.back(-1);</script>';
+print '<script>alert(" Mail Adresi GeÃ§ersiz ! ");history.back(-1);</script>';
 }
 
 include ("yonetim/db.php");
@@ -36,11 +36,11 @@ $mail_kontrol = mysql_query("select user_id from user where user_mail = '".$mail
 if( mysql_num_rows($mail_kontrol) != 1 )
 {
 
-    print '<script>alert("Bu Mail Adresine Kayıtlı Kullanıcı Bulunamadı!");history.back(-1);</script>';
+    print '<script>alert("Bu Mail Adresine KayÄ±tlÄ± KullanÄ±cÄ± BulunamadÄ±!");history.back(-1);</script>';
     exit;
   
   } 
-// Rastgele Kod Üretme
+// Rastgele Kod Ãœretme
 $karakter = 8;
 $baslangic = rand(1,24);
 $rastgelekod = md5(rand(0,500));
@@ -50,14 +50,14 @@ $SQL = "UPDATE user SET  user_lost_sifre = '$user_lost_sifre' WHERE user_mail = 
 $sorgu= @mysql_query($SQL,$baglanti);
 if (!$sorgu)
 {
-print '<script>alert(" Hata Oluştu !");history.back(-1);</script>';
+print '<script>alert(" Hata OluÅŸtu !");history.back(-1);</script>';
 exit();
 }
 @mysql_close($baglanti);
 //sorgu bitti
-// Mail gönderme kodu.
+// Mail gÃ¶nderme kodu.
         $MailAdresiniz = $mail;
-		$isim = "Ferman Kişisel Günce";
+		$isim = "Ferman KiÅŸisel GÃ¼nce";
         # Bu kisma yazi rengi olarak istediginiz renk kodunu yazabilirsiniz.#
         $YaziRenk = "0055A8"; //opsiyonel
         # Bu kisma dis cerceve rengi olarak istediginiz renk kodunu yazabilirsiniz.#
@@ -71,30 +71,30 @@ exit();
         ########################################################
 
 $Gonderilecek='
-Ferman Kisisel Günce 
+Ferman Kisisel GÃ¼nce 
 ';
-    $Header='Sitenizden kayıp şifre isteğinde bulunulmuştur.' . "\n";
-    $Header.='Eğer böyle bir istekte bulunmadıysanız acil olarak başta güvenlik kodunuz olmak üzere,' ."\n";
-	$Header.='Post Code ve şifrenizi değiştiriniz.'."\n";
-	$Header.='Lütfen Güvenlik kodunuzu kimse ile paylaşmayınız.'."\n";
-    $Header.='Hesabınıza erişmek için Geçici Şifreniz: '.$kod."\n";
-	$Header.='www.'.$site_adresi.'login.html tıklayınız';
+    $Header='Sitenizden kayÄ±p ÅŸifre isteÄŸinde bulunulmuÅŸtur.' . "\n";
+    $Header.='EÄŸer bÃ¶yle bir istekte bulunmadÄ±ysanÄ±z acil olarak baÅŸta gÃ¼venlik kodunuz olmak Ã¼zere,' ."\n";
+	$Header.='Post Code ve ÅŸifrenizi deÄŸiÅŸtiriniz.'."\n";
+	$Header.='LÃ¼tfen GÃ¼venlik kodunuzu kimse ile paylaÅŸmayÄ±nÄ±z.'."\n";
+    $Header.='HesabÄ±nÄ±za eriÅŸmek iÃ§in GeÃ§ici Åifreniz: '.$kod."\n";
+	$Header.='www.'.$site_adresi.'login.html tÄ±klayÄ±nÄ±z';
                 if(!$MailAdresiniz)
-                        print '<div id="hata">Lütfen E-Mail Adresinizi girmeniz için dosyayı düzenleyerek gerekli ayarları yapınız!</div>';
+                        print '<div id="hata">LÃ¼tfen E-Mail Adresinizi girmeniz iÃ§in dosyayÄ± dÃ¼zenleyerek gerekli ayarlarÄ± yapÄ±nÄ±z!</div>';
                 else if(!@mail($MailAdresiniz,$Gonderilecek,$Header))
-                        print '<div id="hata">E-Mail gönderilirken hata oluştu! Lütfen tekrar deneyiniz.</div>';
+                        print '<div id="hata">E-Mail gÃ¶nderilirken hata oluÅŸtu! LÃ¼tfen tekrar deneyiniz.</div>';
                 else
 				{
 ?><br />
-Geçici Şifreniz Mail Adresinize Gönderilmiştir...<br />
+GeÃ§ici Åifreniz Mail Adresinize GÃ¶nderilmiÅŸtir...<br />
 <br />
-Lütfen Bekleyiniz<br />
+LÃ¼tfen Bekleyiniz<br />
 <img src="resim/lodos/bekleyin_ms2.gif" width="24" height="24" border="0" /><br />
-Yönlendiriliyorsunuz<br />
+YÃ¶nlendiriliyorsunuz<br />
 <br />
 <meta http-equiv="refresh" content="2;URL=login.html">
 
-Eğer hala yönlenmediyseniz <a href="2;URL=login.html" class="red">tıklayınız</a>
+EÄŸer hala yÃ¶nlenmediyseniz <a href="2;URL=login.html" class="red">tÄ±klayÄ±nÄ±z</a>
 <?
 }
 ?>

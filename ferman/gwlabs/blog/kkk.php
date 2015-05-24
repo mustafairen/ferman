@@ -1,26 +1,26 @@
 <?
-//giriþ kontrol
+//giriÅŸ kontrol
 @include ("giris_kontrol.php");
-// oturumu baslatalým
+// oturumu baslatalÄ±m
 @session_start();
-// giriþ bilgilerini alalým.
+// giriÅŸ bilgilerini alalÄ±m.
 $giris=$_SESSION["giris"];
 $ad=$_SESSION["user_kadi"];
-// giriþ kontrolü yapalým
-// giriþ yapýlmýþ ise $giris true olmalý
+// giriÅŸ kontrolÃ¼ yapalÄ±m
+// giriÅŸ yapÄ±lmÄ±ÅŸ ise $giris true olmalÄ±
 if($giris){
-// giriþ yapýlmýþ hoþgeldin..
+// giriÅŸ yapÄ±lmÄ±ÅŸ hoÅŸgeldin..
 ?>
 <?php
-//********** blog sayfasý **********
+//********** blog sayfasÄ± **********
 ////////////////////////////////////
 
-//kategoriye göre okuma iþlemi
+//kategoriye gÃ¶re okuma iÅŸlemi
 if ($shf == "blog" && $islem == "oku")
 {
 include "gwlabs/blog/oku.php";
 }
-//kategorideki veriye id'ye göre okuma
+//kategorideki veriye id'ye gÃ¶re okuma
 if ($shf == "blog" && $islem == "oku_detay" && $blog_id == $_GET["blog_id"])
 {
 include "gwlabs/blog/konuoku.php";
@@ -30,7 +30,7 @@ if ($shf == "blog" && $islem == "ekle")
 {
 include "gwlabs/blog/ekle.php";
 }
-// veri ekleme iþlemi
+// veri ekleme iÅŸlemi
 if ($shf == "blog" && $islem == "ekleniyor")
 {
 include "gwlabs/blog/islem_ekle.php";
@@ -40,23 +40,23 @@ if ($shf == "blog" && $islem == "sil")
 {
 include "gwlabs/blog/sil.php";
 }
-//veri silme iþlemi
+//veri silme iÅŸlemi
 if ($shf == "blog" && $islem == "siliniyor")
 {
 include "gwlabs/blog/islem_sil.php";
 }
-//veri düzeneleme
+//veri dÃ¼zeneleme
 if ($shf == "blog" && $islem == "duzelt")
 {
 include "gwlabs/blog/duzelt.php";
 }
-//veri düzenleme iþlemi
+//veri dÃ¼zenleme iÅŸlemi
 if ($shf == "blog" && $islem == "duzeltiliyor")
 {
 include "gwlabs/blog/islem_duzelt.php";
 }
 
-//************yorum bölümü***************
+//************yorum bÃ¶lÃ¼mÃ¼***************
 //yorum yaz
 if ($shf == "yorum" && $islem == "ekle")
 {
@@ -67,7 +67,7 @@ if ($shf == "yorum" && $islem == "edit")
 {
 include "gwlabs/blog/yorum/yorumedit.php";
 }
-//yorum edit iþlem
+//yorum edit iÅŸlem
 if ($shf == "yorum" && $islem == "editisle")
 {
 include "gwlabs/blog/yorum/yorumeditisle.php";
@@ -87,28 +87,28 @@ if ($shf == "yorum" && $islem == "onay")
 {
 include "gwlabs/blog/yorum/yorumonay.php";
 }
-//yorum onay kaldýr
+//yorum onay kaldÄ±r
 if ($shf == "yorum" && $islem == "onayk")
 {
 include "gwlabs/blog/yorum/yorumonaykaldir.php";
 }
-//onaysýzlar
+//onaysÄ±zlar
 if ($shf == "yorum" && $islem == "oku_tum")
 {
 include "gwlabs/blog/yorum/yorumoku_tum.php";
 }
-// onaylýlar
+// onaylÄ±lar
 if ($shf == "yorum" && $islem == "oku_onay")
 {
 include "gwlabs/blog/yorum/yorumoku_onay.php";
 }
 /*
-sayfa karar kontrol mekanizmasý sonu
+sayfa karar kontrol mekanizmasÄ± sonu
 */
 ?>
 <?
 }else{
-// giriþ yapýlmamýþ ise ;
+// giriÅŸ yapÄ±lmamÄ±ÅŸ ise ;
 @include ("../../../hata.php");
 }
 ?>
